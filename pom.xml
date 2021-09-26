@@ -19,6 +19,9 @@
         <module>service</module>
         <module>mapper</module>
         <module>api</module>
+        <module>admin</module>
+        <module>boss</module>
+        <module>customer</module>
     </modules>
     <packaging>pom</packaging>
 

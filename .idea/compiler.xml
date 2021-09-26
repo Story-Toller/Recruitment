@@ -7,19 +7,30 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="mapper" />
-        <module name="api" />
+        <module name="boss" />
         <module name="common" />
         <module name="service" />
         <module name="beans" />
+        <module name="admin" />
+        <module name="mapper" />
+        <module name="api" />
+      </profile>
+      <profile name="Annotation profile for Recruitment" enabled="true">
+        <sourceOutputDir name="../boss/target/generated-sources/annotations" />
+        <sourceTestOutputDir name="../boss/target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="customer" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin" options="-parameters" />
       <module name="api" options="-parameters" />
       <module name="beans" options="-parameters" />
+      <module name="boss" options="-parameters" />
       <module name="common" options="-parameters" />
+      <module name="customer" options="-parameters" />
       <module name="mapper" options="-parameters" />
       <module name="service" options="-parameters" />
     </option>
