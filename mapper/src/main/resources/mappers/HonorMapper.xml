@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.HonorMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Honor">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="honor_id" jdbcType="INTEGER" property="honorId" />
+    <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
+    <result column="honor_create_time" jdbcType="DATE" property="honorCreateTime" />
+    <result column="honor_name" jdbcType="VARCHAR" property="honorName" />
+    <result column="honor_grade" jdbcType="VARCHAR" property="honorGrade" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+  </resultMap>
+</mapper>

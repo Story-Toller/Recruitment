@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.SkillMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Skill">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="skill_id" jdbcType="INTEGER" property="skillId" />
+    <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
+    <result column="skill_name" jdbcType="VARCHAR" property="skillName" />
+    <result column="skill_desc" jdbcType="VARCHAR" property="skillDesc" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+    <result column="other2" jdbcType="VARCHAR" property="other2" />
+  </resultMap>
+</mapper>

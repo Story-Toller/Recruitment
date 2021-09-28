@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.ResumeMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Resume">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="resume_id" jdbcType="INTEGER" property="resumeId" />
+    <result column="cust_id" jdbcType="INTEGER" property="custId" />
+    <result column="resume_name" jdbcType="VARCHAR" property="resumeName" />
+    <result column="resume_create_time" jdbcType="TIMESTAMP" property="resumeCreateTime" />
+    <result column="resume_update_time" jdbcType="TIMESTAMP" property="resumeUpdateTime" />
+    <result column="resume_profile" jdbcType="VARCHAR" property="resumeProfile" />
+    <result column="resume_birth" jdbcType="DATE" property="resumeBirth" />
+    <result column="resume_telno" jdbcType="BIGINT" property="resumeTelno" />
+    <result column="resume_email" jdbcType="VARCHAR" property="resumeEmail" />
+    <result column="resume_gender" jdbcType="CHAR" property="resumeGender" />
+    <result column="resume_leaving__working" jdbcType="VARCHAR" property="resumeLeavingWorking" />
+    <result column="resume_live_city" jdbcType="VARCHAR" property="resumeLiveCity" />
+    <result column="resume_personid" jdbcType="VARCHAR" property="resumePersonid" />
+    <result column="resume_income" jdbcType="DECIMAL" property="resumeIncome" />
+    <result column="resume_full_part_time" jdbcType="VARCHAR" property="resumeFullPartTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+    <result column="other2" jdbcType="VARCHAR" property="other2" />
+  </resultMap>
+</mapper>

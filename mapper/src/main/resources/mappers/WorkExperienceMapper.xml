@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.WorkExperienceMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.WorkExperience">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="work_experi_id" jdbcType="INTEGER" property="workExperiId" />
+    <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
+    <result column="work_start_time" jdbcType="DATE" property="workStartTime" />
+    <result column="work_end_time" jdbcType="DATE" property="workEndTime" />
+    <result column="work_company_name" jdbcType="VARCHAR" property="workCompanyName" />
+    <result column="work_position" jdbcType="VARCHAR" property="workPosition" />
+    <result column="work_department" jdbcType="VARCHAR" property="workDepartment" />
+    <result column="work_company_scaler" jdbcType="VARCHAR" property="workCompanyScaler" />
+    <result column="work_company_property" jdbcType="VARCHAR" property="workCompanyProperty" />
+    <result column="work_desc" jdbcType="VARCHAR" property="workDesc" />
+    <result column="work_type" jdbcType="VARCHAR" property="workType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+    <result column="other2" jdbcType="VARCHAR" property="other2" />
+  </resultMap>
+</mapper>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.CustomerMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Customer">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="cust_id" jdbcType="INTEGER" property="custId" />
+    <result column="cust_name" jdbcType="VARCHAR" property="custName" />
+    <result column="cust_telno" jdbcType="CHAR" property="custTelno" />
+    <result column="cust_email" jdbcType="VARCHAR" property="custEmail" />
+    <result column="cust_password" jdbcType="VARCHAR" property="custPassword" />
+    <result column="cust_regist_time" jdbcType="TIMESTAMP" property="custRegistTime" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="other1" jdbcType="VARCHAR" property="other1" />
+    <result column="other2" jdbcType="VARCHAR" property="other2" />
+  </resultMap>
+</mapper>
