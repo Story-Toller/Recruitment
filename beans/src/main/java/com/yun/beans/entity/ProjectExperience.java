@@ -1,56 +1,248 @@
 package com.yun.beans.entity;
 
-import io.swagger.annotations.ApiModel;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
-
-import javax.persistence.*;
-import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
 @Table(name = "project_experience")
-@ApiModel(value = "Project对象", description = "项目经历信息")
-public class ProjectExperience implements Serializable {
-
+public class ProjectExperience {
+    /**
+     * 项目经验id
+     */
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_experi_id")
     private Integer projectExperiId;
 
+    /**
+     * 简历id
+     */
     @Column(name = "resume_id")
     private Integer resumeId;
 
+    /**
+     * 项目所在公司名
+     */
     @Column(name = "project_company_name")
     private String projectCompanyName;
 
+    /**
+     * 项目经验开始时间
+     */
     @Column(name = "project_start_time")
-    @DateTimeFormat(pattern="YYYY-MM-dd")
     private Date projectStartTime;
 
+    /**
+     * 项目经验结束时间
+     */
     @Column(name = "project_end_time")
-    @DateTimeFormat(pattern="YYYY-MM-dd")
     private Date projectEndTime;
 
+    /**
+     * 项目经验名称
+     */
     @Column(name = "project_name")
     private String projectName;
 
+    /**
+     * 项目内容描述
+     */
     @Column(name = "project_content_desc")
     private String projectContentDesc;
 
+    /**
+     * 项目职责描述
+     */
     @Column(name = "project_duty_desc")
     private String projectDutyDesc;
 
-    @Column(name = "status")
     private Integer status;
 
-    @Column(name = "other1")
     private String other1;
 
-    @Column(name = "other2")
     private String other2;
+
+    /**
+     * 获取项目经验id
+     *
+     * @return project_experi_id - 项目经验id
+     */
+    public Integer getProjectExperiId() {
+        return projectExperiId;
+    }
+
+    /**
+     * 设置项目经验id
+     *
+     * @param projectExperiId 项目经验id
+     */
+    public void setProjectExperiId(Integer projectExperiId) {
+        this.projectExperiId = projectExperiId;
+    }
+
+    /**
+     * 获取简历id
+     *
+     * @return resume_id - 简历id
+     */
+    public Integer getResumeId() {
+        return resumeId;
+    }
+
+    /**
+     * 设置简历id
+     *
+     * @param resumeId 简历id
+     */
+    public void setResumeId(Integer resumeId) {
+        this.resumeId = resumeId;
+    }
+
+    /**
+     * 获取项目所在公司名
+     *
+     * @return project_company_name - 项目所在公司名
+     */
+    public String getProjectCompanyName() {
+        return projectCompanyName;
+    }
+
+    /**
+     * 设置项目所在公司名
+     *
+     * @param projectCompanyName 项目所在公司名
+     */
+    public void setProjectCompanyName(String projectCompanyName) {
+        this.projectCompanyName = projectCompanyName;
+    }
+
+    /**
+     * 获取项目经验开始时间
+     *
+     * @return project_start_time - 项目经验开始时间
+     */
+    public Date getProjectStartTime() {
+        return projectStartTime;
+    }
+
+    /**
+     * 设置项目经验开始时间
+     *
+     * @param projectStartTime 项目经验开始时间
+     */
+    public void setProjectStartTime(Date projectStartTime) {
+        this.projectStartTime = projectStartTime;
+    }
+
+    /**
+     * 获取项目经验结束时间
+     *
+     * @return project_end_time - 项目经验结束时间
+     */
+    public Date getProjectEndTime() {
+        return projectEndTime;
+    }
+
+    /**
+     * 设置项目经验结束时间
+     *
+     * @param projectEndTime 项目经验结束时间
+     */
+    public void setProjectEndTime(Date projectEndTime) {
+        this.projectEndTime = projectEndTime;
+    }
+
+    /**
+     * 获取项目经验名称
+     *
+     * @return project_name - 项目经验名称
+     */
+    public String getProjectName() {
+        return projectName;
+    }
+
+    /**
+     * 设置项目经验名称
+     *
+     * @param projectName 项目经验名称
+     */
+    public void setProjectName(String projectName) {
+        this.projectName = projectName;
+    }
+
+    /**
+     * 获取项目内容描述
+     *
+     * @return project_content_desc - 项目内容描述
+     */
+    public String getProjectContentDesc() {
+        return projectContentDesc;
+    }
+
+    /**
+     * 设置项目内容描述
+     *
+     * @param projectContentDesc 项目内容描述
+     */
+    public void setProjectContentDesc(String projectContentDesc) {
+        this.projectContentDesc = projectContentDesc;
+    }
+
+    /**
+     * 获取项目职责描述
+     *
+     * @return project_duty_desc - 项目职责描述
+     */
+    public String getProjectDutyDesc() {
+        return projectDutyDesc;
+    }
+
+    /**
+     * 设置项目职责描述
+     *
+     * @param projectDutyDesc 项目职责描述
+     */
+    public void setProjectDutyDesc(String projectDutyDesc) {
+        this.projectDutyDesc = projectDutyDesc;
+    }
+
+    /**
+     * @return status
+     */
+    public Integer getStatus() {
+        return status;
+    }
+
+    /**
+     * @param status
+     */
+    public void setStatus(Integer status) {
+        this.status = status;
+    }
+
+    /**
+     * @return other1
+     */
+    public String getOther1() {
+        return other1;
+    }
+
+    /**
+     * @param other1
+     */
+    public void setOther1(String other1) {
+        this.other1 = other1;
+    }
+
+    /**
+     * @return other2
+     */
+    public String getOther2() {
+        return other2;
+    }
+
+    /**
+     * @param other2
+     */
+    public void setOther2(String other2) {
+        this.other2 = other2;
+    }
 }
