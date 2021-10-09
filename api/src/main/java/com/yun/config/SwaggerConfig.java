@@ -32,11 +32,11 @@ public class SwaggerConfig {
     private ApiInfo apiInfo() {
 //        作者信息
 
-        Contact contact = new Contact("yun", "https://yun.cn", "1269355513@qq.com");
+        Contact contact = new Contact("Yun", "https://yun.cn", "1269355513@qq.com");
         return new ApiInfo(
-                "Swagger API For Yun",
-                "Swagger API For Yun",
-                "v1.0",
+                "API doc for yun",
+                "招聘平台API文档，仅用于个人设计",
+                "v2.0",
                 "https://yun.cn",
                 contact,
                 "Apache 2.0",
