@@ -21,7 +21,7 @@ public class CustomerServiceImpl implements CustomerService {
     CustomerMapper customerMapper;
 
     @Transactional
-    public ResultVo customerResgit(String email, String password,String name) {
+    public ResultVo customerResgit(String email, String password, String name) {
         synchronized (this) {
 //        根据用户邮箱查询，这个用户是否被注册
             Example example = new Example(Customer.class);
