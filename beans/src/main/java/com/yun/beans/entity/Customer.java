@@ -47,7 +47,8 @@ public class Customer {
     private Integer status;
 
     /**
-     * 备用字段1
+     * 更改为用户头像
+     *
      */
     private String other1;
 
