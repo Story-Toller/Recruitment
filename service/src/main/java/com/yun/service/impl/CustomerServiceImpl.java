@@ -6,12 +6,16 @@ import com.yun.service.business.CustomerService;
 import com.yun.sysytem.utils.MD5Utils;
 import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
+import io.jsonwebtoken.JwtBuilder;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 
 @Service
@@ -61,7 +65,22 @@ public class CustomerServiceImpl implements CustomerService {
         } else {
             String s = MD5Utils.md5(password);
             if (s.equals(customer.get(0).getCustPassword())) {
-                return new ResultVo(ResStatus.OK, "登陆成功", customer.get(0));
+                JwtBuilder builder = Jwts.builder();
+                HashMap<String, Object> objectObjectHashMap = new HashMap<>();
+                objectObjectHashMap.put("key1","value1");
+                objectObjectHashMap.put("key2","value2");
+                objectObjectHashMap.put("key3","value3");
+
+                String token = builder.setSubject(customer.get(0).getCustName())           //设置token中携带的数据
+                        .setIssuedAt(new Date())                            //设置token生成时间
+                        .setId(customer.get(0).getCustId() + "")            //设置用户id
+                        .setClaims(objectObjectHashMap)
+                        .setExpiration(new Date(System.currentTimeMillis() + 24 * 60 * 60 * 1000))//设置token过期时间
+                        .signWith(SignatureAlgorithm.HS512, "syx12138asdf")     //设置token解密密码
+                        .compact();
+
+
+                return new ResultVo(ResStatus.OK, token, customer.get(0));
             } else {
                 return new ResultVo(ResStatus.NO, "登陆失败,密码错误", null);
             }
