@@ -9,12 +9,18 @@ import java.util.List;
 
 @Mapper
 public interface JobMapper extends FamilyMapper<Job> {
-//      首页展示最新发布职业
-        List<JobVo> indexShowJob();
+    //      首页展示最新发布职业
+    List<JobVo> indexShowJob();
 
-//    首页展示全职工作
-        List<JobVo> indexFullJob();
+    //    首页展示全职工作
+    List<JobVo> indexFullJob();
 
-//    首页展示兼职工作
-        List<JobVo> indexPartJob();
+    //    首页展示兼职工作
+    List<JobVo> indexPartJob();
+
+    //        技术类职位展示
+    List<JobVo> showTechnicalJob();
+
+    //        行政类职位展示
+    List<JobVo> showAdministrativeJob();
 }

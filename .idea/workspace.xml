@@ -5,13 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/JobGuideController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/JobGuideService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/JobGuideServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/IndexController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/IndexController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/JobMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/JobMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/IndexJobService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/IndexJobService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/IndexJobServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/IndexJobServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -167,7 +167,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserTest.test (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApiApplicationTests.contextLoads3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
@@ -176,8 +176,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.UserTest" />
-      <option name="METHOD_NAME" value="test" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads3" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiApplicationTests.contextLoads34" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yun.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yun" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads34" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -198,19 +214,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.UserTest.test (1)" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads1" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads2" />
       <item itemvalue="Spring Boot.ApiApplication" />
       <item itemvalue="Spring Boot.CustomerApplication" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads2" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads1" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.UserTest.test (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -237,7 +255,7 @@
       <workItem from="1634001324003" duration="5947000" />
       <workItem from="1634087673680" duration="11856000" />
       <workItem from="1634173727878" duration="12570000" />
-      <workItem from="1634260483342" duration="5897000" />
+      <workItem from="1634260483342" duration="8873000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -302,7 +320,21 @@
       <option name="project" value="LOCAL" />
       <updated>1634262634589</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="支持显示全职工作与兼职工作">
+      <created>1634276772653</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1634276772653</updated>
+    </task>
+    <task id="LOCAL-00011" summary="other1更改为职位状态，other2更改为职位类别">
+      <created>1634276866010</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1634276866010</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -329,7 +361,9 @@
     <MESSAGE value="备用字段投入使用，customer表other1改为用户头像" />
     <MESSAGE value="整合jwt，完成token验证以及拦截器的使用&#10;前端登录时收到token，之后资源受限页面都需token验证&#10;主页实现显示用户名和头像功能" />
     <MESSAGE value="完成主页职位显示功能，更改了job表status字段的属性" />
-    <option name="LAST_COMMIT_MESSAGE" value="完成主页职位显示功能，更改了job表status字段的属性" />
+    <MESSAGE value="支持显示全职工作与兼职工作" />
+    <MESSAGE value="other1更改为职位状态，other2更改为职位类别" />
+    <option name="LAST_COMMIT_MESSAGE" value="other1更改为职位状态，other2更改为职位类别" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

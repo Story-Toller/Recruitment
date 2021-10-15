@@ -44,6 +44,24 @@ class ApiApplicationTests {
         }
 
     }
+    @Test
+    void contextLoads3() {
+
+        List<JobVo> showjobs = jobMapper.showTechnicalJob();
+        for (JobVo j:showjobs){
+            System.out.println(j);
+        }
+
+    }
+    @Test
+    void contextLoads34() {
+
+        List<JobVo> showjobs = jobMapper.showAdministrativeJob();
+        for (JobVo j:showjobs){
+            System.out.println(j);
+        }
+
+    }
     }
 
 

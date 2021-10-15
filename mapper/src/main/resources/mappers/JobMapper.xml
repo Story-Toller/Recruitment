@@ -67,7 +67,8 @@
                job_min_salary,
                job_max_salary,
                other1
-        from job where other1="全职"
+        from job
+        where other1 = "全职"
     </select>
     <select id="indexPartJob" resultMap="JobVoMap">
         select job_id,
@@ -78,6 +79,33 @@
                job_min_salary,
                job_max_salary,
                other1
-        from job where other1="兼职"
+        from job
+        where other1 = "兼职"
+    </select>
+    <select id="showTechnicalJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "技术"
+    </select>
+    <select id="showAdministrativeJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "行政"
     </select>
 </mapper>
