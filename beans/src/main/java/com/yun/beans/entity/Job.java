@@ -122,13 +122,19 @@ public class Job {
 
     /**
      * 状态
-     * 0 全职
-     * 1 兼职
      */
     private Integer status;
 
+    /**
+     * 状态
+     *  全职
+     *  兼职
+     */
     private String other1;
 
+    /**
+     * 职位类别
+     */
     private String other2;
 
     /**
