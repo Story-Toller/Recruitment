@@ -45,7 +45,7 @@ public class TokenInterceptor implements HandlerInterceptor {
                 ResultVo resultVo = new ResultVo(ResStatus.NO, "token不合法", null);
                 doResponse(response, resultVo);
             } catch (Exception e) {
-                ResultVo resultVo = new ResultVo(ResStatus.NO, "请先登录", null);
+                ResultVo resultVo = new ResultVo(ResStatus.NO, "请先登录吧", null);
                 doResponse(response, resultVo);
 
             }

@@ -339,4 +339,25 @@ public class Company {
     public void setOther2(String other2) {
         this.other2 = other2;
     }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId=" + companyId +
+                ", companyName='" + companyName + '\'' +
+                ", companyLogo='" + companyLogo + '\'' +
+                ", companyStage='" + companyStage + '\'' +
+                ", companyEmpCount='" + companyEmpCount + '\'' +
+                ", companyIndustury='" + companyIndustury + '\'' +
+                ", companyDesc='" + companyDesc + '\'' +
+                ", companyWebsite='" + companyWebsite + '\'' +
+                ", companyAddrProvince='" + companyAddrProvince + '\'' +
+                ", companyAddrCity='" + companyAddrCity + '\'' +
+                ", companyAddrArea='" + companyAddrArea + '\'' +
+                ", companyAdrrDetail='" + companyAdrrDetail + '\'' +
+                ", status=" + status +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                '}';
+    }
 }

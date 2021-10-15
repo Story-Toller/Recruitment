@@ -42,7 +42,7 @@ public class Customer {
     private Date custRegistTime;
 
     /**
-     * 状态
+     * 更改为用户性别
      */
     private Integer status;
 

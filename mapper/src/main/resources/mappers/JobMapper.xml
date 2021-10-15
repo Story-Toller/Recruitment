@@ -1,27 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.JobMapper">
-  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Job">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="job_id" jdbcType="INTEGER" property="jobId" />
-    <result column="company_id" jdbcType="INTEGER" property="companyId" />
-    <result column="job_name" jdbcType="VARCHAR" property="jobName" />
-    <result column="job_city" jdbcType="VARCHAR" property="jobCity" />
-    <result column="job_year" jdbcType="VARCHAR" property="jobYear" />
-    <result column="job_degree" jdbcType="VARCHAR" property="jobDegree" />
-    <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber" />
-    <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime" />
-    <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare" />
-    <result column="job_duty" jdbcType="VARCHAR" property="jobDuty" />
-    <result column="job_demand" jdbcType="VARCHAR" property="jobDemand" />
-    <result column="job_addr_detail" jdbcType="VARCHAR" property="jobAddrDetail" />
-    <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary" />
-    <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary" />
-    <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="other1" jdbcType="VARCHAR" property="other1" />
-    <result column="other2" jdbcType="VARCHAR" property="other2" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.yun.beans.entity.Job">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
+        <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
+        <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
+        <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
+        <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
+        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
+        <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
+        <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>
+        <result column="job_addr_detail" jdbcType="VARCHAR" property="jobAddrDetail"/>
+        <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
+        <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
+        <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="other1" jdbcType="VARCHAR" property="other1"/>
+        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+    </resultMap>
+    <resultMap id="JobVoMap" type="com.yun.beans.entity.JobVo">
+        <id column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
+        <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
+        <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
+        <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
+        <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
+        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
+        <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
+        <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>
+        <result column="job_addr_detail" jdbcType="VARCHAR" property="jobAddrDetail"/>
+        <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
+        <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
+        <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="other1" jdbcType="VARCHAR" property="other1"/>
+        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+        <collection property="companyName" select="com.yun.dao.mapper.CompanyMapper.selectNameAndLogoById"
+                    column="company_id"/>
+    </resultMap>
+    <select id="indexShowJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary
+        from job
+        ORDER BY job_publish_time DESC limit 0,3
+    </select>
 </mapper>

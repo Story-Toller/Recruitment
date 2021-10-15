@@ -1,10 +1,12 @@
 package com.yun.beans.entity;
 
+import javax.persistence.Column;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.*;
+import java.util.List;
 
-public class Job {
+public class JobVo {
     /**
      * id
      */
@@ -53,30 +55,6 @@ public class Job {
      */
     @Column(name = "job_publish_time")
     private Date jobPublishTime;
-
-    @Override
-    public String toString() {
-        return "JobVo{" +
-                "jobId=" + jobId +
-                ", companyId=" + companyId +
-                ", jobName='" + jobName + '\'' +
-                ", jobCity='" + jobCity + '\'' +
-                ", jobYear='" + jobYear + '\'' +
-                ", jobDegree='" + jobDegree + '\'' +
-                ", jobNeedNumber=" + jobNeedNumber +
-                ", jobPublishTime=" + jobPublishTime +
-                ", jobWelfare='" + jobWelfare + '\'' +
-                ", jobDuty='" + jobDuty + '\'' +
-                ", jobDemand='" + jobDemand + '\'' +
-                ", jobAddrDetail='" + jobAddrDetail + '\'' +
-                ", jobMinSalary=" + jobMinSalary +
-                ", jobMaxSalary=" + jobMaxSalary +
-                ", jobSearchKeyword='" + jobSearchKeyword + '\'' +
-                ", status=" + status +
-                ", other1='" + other1 + '\'' +
-                ", other2='" + other2 + '\'' +
-                '}';
-    }
 
     /**
      * 福利
@@ -130,6 +108,41 @@ public class Job {
     private String other1;
 
     private String other2;
+
+    private List<Company> companyName;
+
+    @Override
+    public String toString() {
+        return "JobVo{" +
+                "jobId=" + jobId +
+                ", companyId=" + companyId +
+                ", jobName='" + jobName + '\'' +
+                ", jobCity='" + jobCity + '\'' +
+                ", jobYear='" + jobYear + '\'' +
+                ", jobDegree='" + jobDegree + '\'' +
+                ", jobNeedNumber=" + jobNeedNumber +
+                ", jobPublishTime=" + jobPublishTime +
+                ", jobWelfare='" + jobWelfare + '\'' +
+                ", jobDuty='" + jobDuty + '\'' +
+                ", jobDemand='" + jobDemand + '\'' +
+                ", jobAddrDetail='" + jobAddrDetail + '\'' +
+                ", jobMinSalary=" + jobMinSalary +
+                ", jobMaxSalary=" + jobMaxSalary +
+                ", jobSearchKeyword='" + jobSearchKeyword + '\'' +
+                ", status=" + status +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                ", companyName=" + companyName +
+                '}';
+    }
+
+    public List<Company> getCompanyName() {
+        return companyName;
+    }
+
+    public void setCompanyName(List<Company> companyName) {
+        this.companyName = companyName;
+    }
 
     /**
      * 获取id

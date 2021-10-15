@@ -11,4 +11,6 @@ public interface CustomerService {
 //    用户登录
     ResultVo checkLogin(String email,String password);
 
+    ResultVo updateInfor(String name,String phone,String email,String sex);
+
 }

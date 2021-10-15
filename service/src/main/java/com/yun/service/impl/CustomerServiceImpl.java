@@ -87,4 +87,10 @@ public class CustomerServiceImpl implements CustomerService {
         }
 
     }
+
+    @Override
+    public ResultVo updateInfor(String name, String phone, String email, String sex) {
+
+        return null;
+    }
 }
