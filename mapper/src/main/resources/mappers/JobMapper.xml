@@ -53,8 +53,31 @@
                job_city,
                job_year,
                job_min_salary,
-               job_max_salary
+               job_max_salary,
+               other1
         from job
-        ORDER BY job_publish_time DESC limit 0,3
+        ORDER BY job_publish_time DESC
+    </select>
+    <select id="indexFullJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1
+        from job where other1="全职"
+    </select>
+    <select id="indexPartJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1
+        from job where other1="兼职"
     </select>
 </mapper>

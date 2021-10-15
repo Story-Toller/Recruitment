@@ -26,6 +26,24 @@ class ApiApplicationTests {
         }
 
     }
+    @Test
+    void contextLoads1() {
+
+        List<JobVo> showjobs = jobMapper.indexFullJob();
+        for (JobVo j:showjobs){
+            System.out.println(j);
+        }
+
+    }
+    @Test
+    void contextLoads2() {
+
+        List<JobVo> showjobs = jobMapper.indexPartJob();
+        for (JobVo j:showjobs){
+            System.out.println(j);
+        }
+
+    }
     }
 
 

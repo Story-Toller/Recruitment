@@ -23,4 +23,18 @@ public class IndexJobServiceImpl implements IndexJobService {
         ResultVo resultVo = new ResultVo(ResStatus.OK, "sucess", jobVos);
         return resultVo;
     }
+
+    @Override
+    public ResultVo indexFullJob() {
+        List<JobVo> jobVos = jobMapper.indexFullJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "sucess", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo indexPartJob() {
+        List<JobVo> jobVos = jobMapper.indexPartJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "sucess", jobVos);
+        return resultVo;
+    }
 }

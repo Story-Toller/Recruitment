@@ -24,7 +24,20 @@ public class IndexController {
     public ResultVo showHotJob(){
         ResultVo resultVo = indexJobService.showHotJob();
         return resultVo;
+    }
 
+    @GetMapping("/full-job")
+    @ApiOperation("查询全职的接口")
+    public ResultVo showFullJob(){
+        ResultVo resultVo = indexJobService.indexFullJob();
+        return resultVo;
+    }
+
+    @GetMapping("/part-job")
+    @ApiOperation("查询兼职的接口")
+    public ResultVo showPartJob(){
+        ResultVo resultVo = indexJobService.indexPartJob();
+        return resultVo;
     }
 
 }

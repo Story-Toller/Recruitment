@@ -10,6 +10,11 @@ import java.util.List;
 @Mapper
 public interface JobMapper extends FamilyMapper<Job> {
 //      首页展示最新发布职业
-    public List<JobVo> indexShowJob();
+        List<JobVo> indexShowJob();
 
+//    首页展示全职工作
+        List<JobVo> indexFullJob();
+
+//    首页展示兼职工作
+        List<JobVo> indexPartJob();
 }
