@@ -23,4 +23,22 @@ public interface JobMapper extends FamilyMapper<Job> {
 
     //        行政类职位展示
     List<JobVo> showAdministrativeJob();
+
+    //        设计类职位展示
+    List<JobVo> showDesignJob();
+
+    //        金融类职位展示
+    List<JobVo> showMoneyJob();
+
+    //        销售类职位展示
+    List<JobVo> showSaleJob();
+
+    //        教育类职位展示
+    List<JobVo> showEducationJob();
+
+    //        医疗类职位展示
+    List<JobVo> showHealthyJob();
+
+    //        运营类职位展示
+    List<JobVo> showDealJob();
 }

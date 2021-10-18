@@ -106,6 +106,85 @@
                other1,
                other2
         from job
-        where other2 = "行政"
+        where other2 = "人事/财务/行政"
+    </select>
+    <select id="showDesignJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "金融"
+    </select>
+
+    <select id="showMoneyJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "销售"
+    </select>
+    <select id="showSaleJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "销售"
+    </select>
+    <select id="showEducationJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "教育培训"
+    </select>
+    <select id="showHealthyJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "医疗健康"
+    </select>
+    <select id="showDealJob" resultMap="JobVoMap">
+        select job_id,
+               company_id,
+               job_name,
+               job_city,
+               job_year,
+               job_min_salary,
+               job_max_salary,
+               other1,
+               other2
+        from job
+        where other2 = "运营"
     </select>
 </mapper>

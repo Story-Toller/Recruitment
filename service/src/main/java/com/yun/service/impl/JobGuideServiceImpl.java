@@ -29,4 +29,46 @@ public class JobGuideServiceImpl implements JobGuideService {
         ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
         return resultVo;
     }
+
+    @Override
+    public ResultVo showDesignJob() {
+        List<JobVo> jobVos = jobMapper.showAdministrativeJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showMoneyJob() {
+        List<JobVo> jobVos = jobMapper.showMoneyJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showSaleJob() {
+        List<JobVo> jobVos = jobMapper.showSaleJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showEducationJob() {
+        List<JobVo> jobVos = jobMapper.showEducationJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showHealthyJob() {
+        List<JobVo> jobVos = jobMapper.showHealthyJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showDealJob() {
+        List<JobVo> jobVos = jobMapper.showDealJob();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVos);
+        return resultVo;
+    }
 }

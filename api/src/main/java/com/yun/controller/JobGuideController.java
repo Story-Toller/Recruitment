@@ -28,8 +28,43 @@ public class JobGuideController {
 
     @GetMapping("/adm-job")
     @ApiOperation("查询行政职位的接口")
-    public ResultVo showAdmJob(){
-        ResultVo resultVo = jobGuideService.showAdmJob();
+    public ResultVo showDesignJob(){
+        ResultVo resultVo = jobGuideService.showDesignJob();
         return resultVo;
     }
+    @GetMapping("/money-job")
+    @ApiOperation("查询金融职位的接口")
+    public ResultVo MoneyJob(){
+        ResultVo resultVo = jobGuideService.showMoneyJob();
+        return resultVo;
+    }
+    @GetMapping("/sale-job")
+    @ApiOperation("查询销售职位的接口")
+    public ResultVo SaleJob(){
+        ResultVo resultVo = jobGuideService.showSaleJob();
+        return resultVo;
+    }
+    @GetMapping("/edu-job")
+    @ApiOperation("查询教育职位的接口")
+    public ResultVo EducationJob(){
+        ResultVo resultVo = jobGuideService.showEducationJob();
+        return resultVo;
+    }
+    @GetMapping("/hea-job")
+    @ApiOperation("查询医疗健康职位的接口")
+    public ResultVo HealthyJob(){
+        ResultVo resultVo = jobGuideService.showHealthyJob();
+        return resultVo;
+    }
+
+
+
+    @GetMapping("/deal-job")
+    @ApiOperation("查询运营职位的接口")
+    public ResultVo DealJob(){
+        ResultVo resultVo = jobGuideService.showDealJob();
+        return resultVo;
+    }
+
+
 }
