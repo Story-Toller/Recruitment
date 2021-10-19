@@ -1,19 +1,11 @@
-package com.yun.beans.entity;
+package com.yun.beans.vo;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import javax.persistence.Column;
+import javax.persistence.Id;
 import java.math.BigDecimal;
 import java.util.Date;
-import javax.persistence.*;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-public class Job {
-    /**
-     * id
-     */
+public class JobDesVo {
     @Id
     @Column(name = "job_id")
     private Integer jobId;
@@ -111,20 +103,17 @@ public class Job {
     /**
      * 状态
      */
-    @Column(name = "job_status")
-    private Integer jobStatus;
+    private Integer status;
 
     /**
      * 状态
      *  全职
      *  兼职
      */
-    @Column(name = "job_other1")
-    private String jobOther1;
+    private String other1;
 
     /**
      * 职位类别
      */
-    @Column(name = "job_other2")
-    private String jobOther2;
+    private String other2;
 }

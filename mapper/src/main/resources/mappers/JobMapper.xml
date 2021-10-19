@@ -21,9 +21,9 @@
         <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
         <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
         <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword"/>
-        <result column="status" jdbcType="INTEGER" property="status"/>
-        <result column="other1" jdbcType="VARCHAR" property="other1"/>
-        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+        <result column="job_status" jdbcType="INTEGER" property="jobStatus"/>
+        <result column="job_other1" jdbcType="VARCHAR" property="jobOther1"/>
+        <result column="job_other2" jdbcType="VARCHAR" property="jobOther2"/>
     </resultMap>
     <resultMap id="JobVoMap" type="com.yun.beans.entity.JobVo">
         <id column="job_id" jdbcType="INTEGER" property="jobId"/>
@@ -41,9 +41,9 @@
         <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
         <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
         <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword"/>
-        <result column="status" jdbcType="INTEGER" property="status"/>
-        <result column="other1" jdbcType="VARCHAR" property="other1"/>
-        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+        <result column="job_status" jdbcType="INTEGER" property="jobStatus"/>
+        <result column="job_other1" jdbcType="VARCHAR" property="jobOther1"/>
+        <result column="job_other2" jdbcType="VARCHAR" property="jobOther2"/>
         <collection property="companyName" select="com.yun.dao.mapper.CompanyMapper.selectNameAndLogoById"
                     column="company_id"/>
     </resultMap>
@@ -55,7 +55,7 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1
+               job_other1
         from job
         ORDER BY job_publish_time DESC
     </select>
@@ -67,9 +67,9 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1
+               job_other1
         from job
-        where other1 = "全职"
+        where job_other1 = "全职"
     </select>
     <select id="indexPartJob" resultMap="JobVoMap">
         select job_id,
@@ -79,9 +79,9 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1
+               job_other1
         from job
-        where other1 = "兼职"
+        where job_other1 = "兼职"
     </select>
     <select id="showTechnicalJob" resultMap="JobVoMap">
         select job_id,
@@ -91,10 +91,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "技术"
+        where job_other2 = "技术"
     </select>
     <select id="showAdministrativeJob" resultMap="JobVoMap">
         select job_id,
@@ -104,10 +104,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "人事/财务/行政"
+        where job_other2 = "人事/财务/行政"
     </select>
     <select id="showDesignJob" resultMap="JobVoMap">
         select job_id,
@@ -117,10 +117,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "金融"
+        where job_other2 = "金融"
     </select>
 
     <select id="showMoneyJob" resultMap="JobVoMap">
@@ -131,10 +131,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "销售"
+        where job_other2 = "销售"
     </select>
     <select id="showSaleJob" resultMap="JobVoMap">
         select job_id,
@@ -144,10 +144,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "销售"
+        where job_other2 = "销售"
     </select>
     <select id="showEducationJob" resultMap="JobVoMap">
         select job_id,
@@ -157,10 +157,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "教育培训"
+        where job_other2 = "教育培训"
     </select>
     <select id="showHealthyJob" resultMap="JobVoMap">
         select job_id,
@@ -170,10 +170,10 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "医疗健康"
+        where job_other2 = "医疗健康"
     </select>
     <select id="showDealJob" resultMap="JobVoMap">
         select job_id,
@@ -183,9 +183,9 @@
                job_year,
                job_min_salary,
                job_max_salary,
-               other1,
-               other2
+               job_other1,
+               job_other2
         from job
-        where other2 = "运营"
+        where job_other2 = "运营"
     </select>
 </mapper>
