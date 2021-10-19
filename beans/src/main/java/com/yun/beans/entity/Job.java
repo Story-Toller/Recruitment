@@ -12,11 +12,50 @@ public class Job {
     @Column(name = "job_id")
     private Integer jobId;
 
+    @Override
+    public String toString() {
+        return "Job{" +
+                "jobId=" + jobId +
+                ", companyId=" + companyId +
+                ", companyAdminId=" + companyAdminId +
+                ", jobName='" + jobName + '\'' +
+                ", jobCity='" + jobCity + '\'' +
+                ", jobYear='" + jobYear + '\'' +
+                ", jobDegree='" + jobDegree + '\'' +
+                ", jobNeedNumber=" + jobNeedNumber +
+                ", jobPublishTime=" + jobPublishTime +
+                ", jobWelfare='" + jobWelfare + '\'' +
+                ", jobDuty='" + jobDuty + '\'' +
+                ", jobDemand='" + jobDemand + '\'' +
+                ", jobAddrDetail='" + jobAddrDetail + '\'' +
+                ", jobMinSalary=" + jobMinSalary +
+                ", jobMaxSalary=" + jobMaxSalary +
+                ", jobSearchKeyword='" + jobSearchKeyword + '\'' +
+                ", status=" + status +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                '}';
+    }
+
+    public Integer getCompanyAdminId() {
+        return companyAdminId;
+    }
+
+    public void setCompanyAdminId(Integer companyAdminId) {
+        this.companyAdminId = companyAdminId;
+    }
+
     /**
      * 公司id
      */
     @Column(name = "company_id")
     private Integer companyId;
+
+    /**
+     * 职位发布人id
+     */
+    @Column(name = "company_admin_id")
+    private Integer companyAdminId;
 
     /**
      * 职位名称
@@ -53,30 +92,6 @@ public class Job {
      */
     @Column(name = "job_publish_time")
     private Date jobPublishTime;
-
-    @Override
-    public String toString() {
-        return "JobVo{" +
-                "jobId=" + jobId +
-                ", companyId=" + companyId +
-                ", jobName='" + jobName + '\'' +
-                ", jobCity='" + jobCity + '\'' +
-                ", jobYear='" + jobYear + '\'' +
-                ", jobDegree='" + jobDegree + '\'' +
-                ", jobNeedNumber=" + jobNeedNumber +
-                ", jobPublishTime=" + jobPublishTime +
-                ", jobWelfare='" + jobWelfare + '\'' +
-                ", jobDuty='" + jobDuty + '\'' +
-                ", jobDemand='" + jobDemand + '\'' +
-                ", jobAddrDetail='" + jobAddrDetail + '\'' +
-                ", jobMinSalary=" + jobMinSalary +
-                ", jobMaxSalary=" + jobMaxSalary +
-                ", jobSearchKeyword='" + jobSearchKeyword + '\'' +
-                ", status=" + status +
-                ", other1='" + other1 + '\'' +
-                ", other2='" + other2 + '\'' +
-                '}';
-    }
 
     /**
      * 福利
