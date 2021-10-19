@@ -48,6 +48,14 @@ public class CompanyAdmin {
     @Column(name = "company_admin_create_time")
     private Date companyAdminCreateTime;
 
+    @Column(name = "company_admin_position")
+    private String companyAdminPosition;
+
+    @Column(name = "company_admin_img")
+    private String companyAdminImg;
+
+
+
     private Integer status;
 
     private String other1;
@@ -220,5 +228,39 @@ public class CompanyAdmin {
      */
     public void setOther2(String other2) {
         this.other2 = other2;
+    }
+
+    public String getCompanyAdminPosition() {
+        return companyAdminPosition;
+    }
+
+    public void setCompanyAdminPosition(String companyAdminPosition) {
+        this.companyAdminPosition = companyAdminPosition;
+    }
+
+    public String getCompanyAdminImg() {
+        return companyAdminImg;
+    }
+
+    public void setCompanyAdminImg(String companyAdminImg) {
+        this.companyAdminImg = companyAdminImg;
+    }
+
+    @Override
+    public String toString() {
+        return "CompanyAdmin{" +
+                "companyAdminId=" + companyAdminId +
+                ", companyId=" + companyId +
+                ", companyAdminName='" + companyAdminName + '\'' +
+                ", companyAdminTelno=" + companyAdminTelno +
+                ", companyAdminEmail='" + companyAdminEmail + '\'' +
+                ", companyAdminPassword='" + companyAdminPassword + '\'' +
+                ", companyAdminCreateTime=" + companyAdminCreateTime +
+                ", companyAdminPosition='" + companyAdminPosition + '\'' +
+                ", companyAdminImg='" + companyAdminImg + '\'' +
+                ", status=" + status +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                '}';
     }
 }

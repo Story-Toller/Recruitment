@@ -12,6 +12,8 @@
     <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail" />
     <result column="company_admin_password" jdbcType="VARCHAR" property="companyAdminPassword" />
     <result column="company_admin_create_time" jdbcType="TIMESTAMP" property="companyAdminCreateTime" />
+    <result column="company_admin_position" jdbcType="INTEGER" property="companyAdminPosition" />
+    <result column="company_admin_img" jdbcType="INTEGER" property="companyAdminImg" />
     <result column="status" jdbcType="INTEGER" property="status" />
     <result column="other1" jdbcType="VARCHAR" property="other1" />
     <result column="other2" jdbcType="VARCHAR" property="other2" />
