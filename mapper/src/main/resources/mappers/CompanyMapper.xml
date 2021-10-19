@@ -29,4 +29,26 @@
         from company
         where company_id = #{jobId}
     </select>
+    <select id="showAllCompanyInfo" resultMap="BaseResultMap">
+        SELECT company_id,
+               company_name,
+               company_logo,
+               company_stage,
+               company_emp_count,
+               company_industury,
+               company_desc,
+               company_website,
+               company_addr_province,
+               company_addr_city,
+               company_addr_area,
+               company_adrr_detail,
+               status,
+               other1,
+               other2,
+               company_legal_person,
+               company_registered_capital,
+               company_set_data
+        from company
+        where company_id = #{companyId}
+    </select>
 </mapper>
