@@ -83,6 +83,73 @@ public class Company {
     private String other2;
 
     /**
+     * 公司法人
+     */
+    @Column(name = "company_legal_person")
+    private String companyLegalPerson;
+
+    /**
+     * 公司注册资本
+     */
+    @Column(name = "company_registered_capital")
+    private String companyRegisteredCapital;
+
+    /**
+     * 公司注册时间
+     */
+    @Column(name = "company_set_data")
+    private String companySetData;
+
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "companyId=" + companyId +
+                ", companyName='" + companyName + '\'' +
+                ", companyLogo='" + companyLogo + '\'' +
+                ", companyStage='" + companyStage + '\'' +
+                ", companyEmpCount='" + companyEmpCount + '\'' +
+                ", companyIndustury='" + companyIndustury + '\'' +
+                ", companyDesc='" + companyDesc + '\'' +
+                ", companyWebsite='" + companyWebsite + '\'' +
+                ", companyAddrProvince='" + companyAddrProvince + '\'' +
+                ", companyAddrCity='" + companyAddrCity + '\'' +
+                ", companyAddrArea='" + companyAddrArea + '\'' +
+                ", companyAdrrDetail='" + companyAdrrDetail + '\'' +
+                ", status=" + status +
+                ", other1='" + other1 + '\'' +
+                ", other2='" + other2 + '\'' +
+                ", companyLegalPerson='" + companyLegalPerson + '\'' +
+                ", companyRegisteredCapital='" + companyRegisteredCapital + '\'' +
+                ", companySetData='" + companySetData + '\'' +
+                '}';
+    }
+
+    public String getCompanyLegalPerson() {
+        return companyLegalPerson;
+    }
+
+    public void setCompanyLegalPerson(String companyLegalPerson) {
+        this.companyLegalPerson = companyLegalPerson;
+    }
+
+    public String getCompanyRegisteredCapital() {
+        return companyRegisteredCapital;
+    }
+
+    public void setCompanyRegisteredCapital(String companyRegisteredCapital) {
+        this.companyRegisteredCapital = companyRegisteredCapital;
+    }
+
+    public String getCompanySetData() {
+        return companySetData;
+    }
+
+    public void setCompanySetData(String companySetData) {
+        this.companySetData = companySetData;
+    }
+
+    /**
      * 获取公司id
      *
      * @return company_id - 公司id
@@ -340,24 +407,4 @@ public class Company {
         this.other2 = other2;
     }
 
-    @Override
-    public String toString() {
-        return "Company{" +
-                "companyId=" + companyId +
-                ", companyName='" + companyName + '\'' +
-                ", companyLogo='" + companyLogo + '\'' +
-                ", companyStage='" + companyStage + '\'' +
-                ", companyEmpCount='" + companyEmpCount + '\'' +
-                ", companyIndustury='" + companyIndustury + '\'' +
-                ", companyDesc='" + companyDesc + '\'' +
-                ", companyWebsite='" + companyWebsite + '\'' +
-                ", companyAddrProvince='" + companyAddrProvince + '\'' +
-                ", companyAddrCity='" + companyAddrCity + '\'' +
-                ", companyAddrArea='" + companyAddrArea + '\'' +
-                ", companyAdrrDetail='" + companyAdrrDetail + '\'' +
-                ", status=" + status +
-                ", other1='" + other1 + '\'' +
-                ", other2='" + other2 + '\'' +
-                '}';
-    }
 }

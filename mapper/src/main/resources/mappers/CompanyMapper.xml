@@ -20,6 +20,9 @@
         <result column="status" jdbcType="INTEGER" property="status"/>
         <result column="other1" jdbcType="VARCHAR" property="other1"/>
         <result column="other2" jdbcType="VARCHAR" property="other2"/>
+        <result column="company_legal_person" jdbcType="VARCHAR" property="companyLegalPerson"/>
+        <result column="company_registered_capital" jdbcType="VARCHAR" property="companyRegisteredCapital"/>
+        <result column="company_set_data" jdbcType="VARCHAR" property="companySetData"/>
     </resultMap>
     <select id="selectNameAndLogoById" resultMap="BaseResultMap">
         SELECT company_name, company_logo, company_id
