@@ -7,6 +7,7 @@
         -->
         <id column="job_id" jdbcType="INTEGER" property="jobId"/>
         <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="company_admin_id" jdbcType="INTEGER" property="companyAdminId"/>
         <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
         <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
         <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
