@@ -2,6 +2,7 @@ package com.yun.dao.mapper;
 
 import com.yun.beans.entity.Job;
 import com.yun.beans.entity.JobVo;
+import com.yun.beans.vo.JobDesVo;
 import com.yun.dao.tk.FamilyMapper;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -41,4 +42,7 @@ public interface JobMapper extends FamilyMapper<Job> {
 
     //        运营类职位展示
     List<JobVo> showDealJob();
+
+//    职位详情显示
+    List<JobDesVo> showJobDes(int jobId);
 }

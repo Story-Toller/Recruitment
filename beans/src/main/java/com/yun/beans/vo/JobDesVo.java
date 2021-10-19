@@ -139,11 +139,6 @@ public class JobDesVo {
     @Column(name = "company_logo")
     private String companyLogo;
 
-    /**
-     * 公司阶段
-     */
-    @Column(name = "company_stage")
-    private String companyStage;
 
     /**
      * 公司员工规模
@@ -164,37 +159,6 @@ public class JobDesVo {
     private String companyDesc;
 
     /**
-     * 公司网址
-     */
-    @Column(name = "company_website")
-    private String companyWebsite;
-
-    /**
-     * 公司地址省份
-     */
-    @Column(name = "company_addr_province")
-    private String companyAddrProvince;
-
-    /**
-     * 公司地址城市
-     */
-    @Column(name = "company_addr_city")
-    private String companyAddrCity;
-
-    /**
-     * 公司地址区域
-     */
-    @Column(name = "company_addr_area")
-    private String companyAddrArea;
-
-    /**
-     * 公司详细地址
-     */
-    @Column(name = "company_adrr_detail")
-    private String companyAdrrDetail;
-
-
-    /**
      * 公司管理员账户名
      */
     @Column(name = "company_admin_name")
@@ -212,15 +176,9 @@ public class JobDesVo {
     @Column(name = "company_admin_email")
     private String companyAdminEmail;
 
-    /**
-     * 公司管理员账户密码
-     */
-    @Column(name = "company_admin_password")
-    private String companyAdminPassword;
+    @Column(name = "company_admin_position")
+    private String companyAdminPosition;
 
-    /**
-     * 公司管理员账户创建时间
-     */
-    @Column(name = "company_admin_create_time")
-    private Date companyAdminCreateTime;
+    @Column(name = "company_admin_img")
+    private String companyAdminImg;
 }

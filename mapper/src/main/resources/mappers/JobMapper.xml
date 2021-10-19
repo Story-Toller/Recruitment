@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.JobMapper">
     <resultMap id="BaseResultMap" type="com.yun.beans.entity.Job">
-        <!--
-          WARNING - @mbg.generated
-        -->
         <id column="job_id" jdbcType="INTEGER" property="jobId"/>
         <result column="company_id" jdbcType="INTEGER" property="companyId"/>
         <result column="company_admin_id" jdbcType="INTEGER" property="companyAdminId"/>
@@ -46,6 +43,37 @@
         <result column="job_other2" jdbcType="VARCHAR" property="jobOther2"/>
         <collection property="companyName" select="com.yun.dao.mapper.CompanyMapper.selectNameAndLogoById"
                     column="company_id"/>
+    </resultMap>
+    <resultMap id="JobDesVoMap" type="com.yun.beans.vo.JobDesVo">
+        <id column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="company_admin_id" jdbcType="INTEGER" property="companyAdminId"/>
+        <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
+        <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
+        <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
+        <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
+        <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
+        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
+        <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
+        <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>
+        <result column="job_addr_detail" jdbcType="VARCHAR" property="jobAddrDetail"/>
+        <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
+        <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
+        <result column="job_search_keyword" jdbcType="VARCHAR" property="jobSearchKeyword"/>
+        <result column="job_status" jdbcType="INTEGER" property="jobStatus"/>
+        <result column="job_other1" jdbcType="VARCHAR" property="jobOther1"/>
+        <result column="job_other2" jdbcType="VARCHAR" property="jobOther2"/>
+        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+        <result column="company_logo" jdbcType="VARCHAR" property="companyLogo"/>
+        <result column="company_emp_count" jdbcType="VARCHAR" property="companyEmpCount"/>
+        <result column="company_industury" jdbcType="VARCHAR" property="companyIndustury"/>
+        <result column="company_desc" jdbcType="VARCHAR" property="companyDesc"/>
+        <result column="company_admin_name" jdbcType="VARCHAR" property="companyAdminName"/>
+        <result column="company_admin_telno" jdbcType="BIGINT" property="companyAdminTelno"/>
+        <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail"/>
+        <result column="company_admin_position" jdbcType="INTEGER" property="companyAdminPosition"/>
+        <result column="company_admin_img" jdbcType="INTEGER" property="companyAdminImg"/>
     </resultMap>
     <select id="indexShowJob" resultMap="JobVoMap">
         select job_id,
@@ -187,5 +215,42 @@
                job_other2
         from job
         where job_other2 = "运营"
+    </select>
+    <select id="showJobDes" resultMap="JobDesVoMap">
+        select      j.job_id,
+                    j.company_id,
+                    j.company_admin_id,
+                    j.job_name,
+                    j.job_city,
+                    j.job_year,
+                    j.job_degree,
+                    j.job_need_number,
+                    j.job_publish_time,
+                    j.job_welfare,
+                    j.job_duty,
+                    j.job_demand,
+                    j.job_addr_detail,
+                    j.job_min_salary,
+                    j.job_max_salary,
+                    j.job_search_keyword,
+                    j.job_status,
+                    j.job_other1,
+                    j.job_other2,
+                    c.company_name,
+                    c.company_logo,
+                    c.company_emp_count,
+                    c.company_industury,
+                    c.company_desc,
+                    a.company_admin_name,
+                    a.company_admin_telno,
+                    a.company_admin_email,
+                    a.company_admin_position,
+                    a.company_admin_img
+        from job j
+                 INNER JOIN company_admin a
+                            on a.company_admin_id = j.company_admin_id
+                 INNER JOIN company c
+                            on a.company_id = c.company_id
+        where job_id = #{jobId}
     </select>
 </mapper>
