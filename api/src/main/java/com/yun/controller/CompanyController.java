@@ -16,9 +16,9 @@ public class CompanyController {
     @Autowired
     CompanyService companyService;
 
-    @GetMapping("/full_infor")
+    @GetMapping("/full_infor/{companyId}")
     @ApiOperation("查询公司详情的接口")
-    public ResultVo showAllInformation(int companyId){
+    public ResultVo showAllInformation(@PathVariable("companyId") int companyId){
         ResultVo resultVo = companyService.showAllCompanyInfo(companyId);
         return resultVo;
     }

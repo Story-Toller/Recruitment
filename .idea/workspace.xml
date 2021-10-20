@@ -4,14 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="提供行政和技术职位列表的接口">
+    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="company_admin表新增字段company_admin_position和company_admin_img">
+      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/vo/CompanyVo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/JobGuideController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/JobGuideController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CompanyController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/JobMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/JobMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/JobMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/JobMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/JobGuideService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/JobGuideService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/JobGuideServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/JobGuideServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CompanyMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +77,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -108,38 +106,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
-    <configuration name="ApiApplicationTests.contextLoads1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads1" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiApplicationTests.contextLoads2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads2" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApiApplicationTests.contextLoads3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -188,6 +154,38 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiApplicationTests.contextLoads7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yun.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yun" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads7" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ApiApplicationTests.contextLoads8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yun.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yun" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads8" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yun.ApiApplication" />
@@ -203,21 +201,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads1" />
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads2" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
       <item itemvalue="Spring Boot.ApiApplication" />
       <item itemvalue="Spring Boot.CustomerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads2" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads1" />
       </list>
     </recent_temporary>
   </component>
@@ -247,6 +245,9 @@
       <workItem from="1634260483342" duration="11161000" />
       <workItem from="1634285928606" duration="1606000" />
       <workItem from="1634519656336" duration="2538000" />
+      <workItem from="1634526068565" duration="9849000" />
+      <workItem from="1634605925483" duration="15862000" />
+      <workItem from="1634694243897" duration="916000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -332,7 +333,63 @@
       <option name="project" value="LOCAL" />
       <updated>1634283323454</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="提供其他职位列表的接口">
+      <created>1634526131462</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1634526131462</updated>
+    </task>
+    <task id="LOCAL-00014" summary="job表新增company_admin_id（职位添加人id）字段">
+      <created>1634613342338</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1634613342338</updated>
+    </task>
+    <task id="LOCAL-00015" summary="job表新增company_admin_id（职位添加人id）字段">
+      <created>1634613423355</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1634613423355</updated>
+    </task>
+    <task id="LOCAL-00016" summary="job相关表更换other1,other2,status字段名为job_status，job_other1，job_other2">
+      <created>1634614609457</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1634614609457</updated>
+    </task>
+    <task id="LOCAL-00017" summary="company_admin表新增字段company_admin_position和company_admin_img">
+      <created>1634621791706</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1634621791706</updated>
+    </task>
+    <task id="LOCAL-00018" summary="新增查询职位详情信息的接口">
+      <created>1634629254289</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1634629254289</updated>
+    </task>
+    <task id="LOCAL-00019" summary="company表新增字段companyLegalPerson,companyRegisteredCapital,companySetData">
+      <created>1634629675458</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1634629675458</updated>
+    </task>
+    <task id="LOCAL-00020" summary="提供展示公司详情的接口">
+      <created>1634630684074</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1634630684074</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -362,7 +419,14 @@
     <MESSAGE value="支持显示全职工作与兼职工作" />
     <MESSAGE value="other1更改为职位状态，other2更改为职位类别" />
     <MESSAGE value="提供行政和技术职位列表的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="提供行政和技术职位列表的接口" />
+    <MESSAGE value="提供其他职位列表的接口" />
+    <MESSAGE value="job表新增company_admin_id（职位添加人id）字段" />
+    <MESSAGE value="job相关表更换other1,other2,status字段名为job_status，job_other1，job_other2" />
+    <MESSAGE value="company_admin表新增字段company_admin_position和company_admin_img" />
+    <MESSAGE value="新增查询职位详情信息的接口" />
+    <MESSAGE value="company表新增字段companyLegalPerson,companyRegisteredCapital,companySetData" />
+    <MESSAGE value="提供展示公司详情的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="提供展示公司详情的接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -371,7 +435,14 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="tk.mybatis.mapper.MapperException" package="tk.mybatis.mapper" />
+          <option name="timeStamp" value="4" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Recruitment$ApiApplication.ic" NAME="ApiApplication Coverage Results" MODIFIED="1634606884109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

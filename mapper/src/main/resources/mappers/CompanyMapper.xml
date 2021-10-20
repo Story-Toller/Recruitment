@@ -2,9 +2,6 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.CompanyMapper">
     <resultMap id="BaseResultMap" type="com.yun.beans.entity.Company">
-        <!--
-          WARNING - @mbg.generated
-        -->
         <id column="company_id" jdbcType="INTEGER" property="companyId"/>
         <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
         <result column="company_logo" jdbcType="VARCHAR" property="companyLogo"/>
@@ -24,31 +21,65 @@
         <result column="company_registered_capital" jdbcType="VARCHAR" property="companyRegisteredCapital"/>
         <result column="company_set_data" jdbcType="VARCHAR" property="companySetData"/>
     </resultMap>
+    <resultMap id="CompanyVoMap" type="com.yun.beans.vo.CompanyVo">
+        <id column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+        <result column="company_logo" jdbcType="VARCHAR" property="companyLogo"/>
+        <result column="company_stage" jdbcType="VARCHAR" property="companyStage"/>
+        <result column="company_emp_count" jdbcType="VARCHAR" property="companyEmpCount"/>
+        <result column="company_industury" jdbcType="VARCHAR" property="companyIndustury"/>
+        <result column="company_desc" jdbcType="VARCHAR" property="companyDesc"/>
+        <result column="company_website" jdbcType="VARCHAR" property="companyWebsite"/>
+        <result column="company_addr_province" jdbcType="VARCHAR" property="companyAddrProvince"/>
+        <result column="company_addr_city" jdbcType="VARCHAR" property="companyAddrCity"/>
+        <result column="company_addr_area" jdbcType="VARCHAR" property="companyAddrArea"/>
+        <result column="company_adrr_detail" jdbcType="VARCHAR" property="companyAdrrDetail"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="other1" jdbcType="VARCHAR" property="other1"/>
+        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+        <result column="company_legal_person" jdbcType="VARCHAR" property="companyLegalPerson"/>
+        <result column="company_registered_capital" jdbcType="VARCHAR" property="companyRegisteredCapital"/>
+        <result column="company_set_data" jdbcType="VARCHAR" property="companySetData"/>
+        <result column="company_admin_id" jdbcType="VARCHAR" property="companyAdminId"/>
+        <result column="company_admin_name" jdbcType="VARCHAR" property="companyAdminName"/>
+        <result column="company_admin_telno" jdbcType="VARCHAR" property="companyAdminTelno"/>
+        <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail"/>
+        <result column="company_admin_position" jdbcType="VARCHAR" property="companyAdminPosition"/>
+        <result column="company_admin_img" jdbcType="VARCHAR" property="companyAdminImg"/>
+    </resultMap>
     <select id="selectNameAndLogoById" resultMap="BaseResultMap">
         SELECT company_name, company_logo, company_id
         from company
         where company_id = #{jobId}
     </select>
-    <select id="showAllCompanyInfo" resultMap="BaseResultMap">
-        SELECT company_id,
-               company_name,
-               company_logo,
-               company_stage,
-               company_emp_count,
-               company_industury,
-               company_desc,
-               company_website,
-               company_addr_province,
-               company_addr_city,
-               company_addr_area,
-               company_adrr_detail,
-               status,
-               other1,
-               other2,
-               company_legal_person,
-               company_registered_capital,
-               company_set_data
-        from company
-        where company_id = #{companyId}
+    <select id="showAllCompanyInfo" resultMap="CompanyVoMap">
+        SELECT     c.company_id,
+                   c.company_name,
+                   c.company_logo,
+                   c.company_stage,
+                   c.company_emp_count,
+                   c.company_industury,
+                   c.company_desc,
+                   c.company_website,
+                   c.company_addr_province,
+                   c.company_addr_city,
+                   c.company_addr_area,
+                   c.company_adrr_detail,
+                   c.status,
+                   c.other1,
+                   c.other2,
+                   c.company_legal_person,
+                   c.company_registered_capital,
+                   c.company_set_data,
+                   a.company_admin_id,
+                   a.company_admin_name,
+                   a.company_admin_telno,
+                   a.company_admin_email,
+                   a.company_admin_position,
+                   a.company_admin_img
+        from company c
+                 INNER JOIN company_admin a
+                            on a.company_id = c.company_id
+        where c.company_id = #{companyId}
     </select>
 </mapper>
