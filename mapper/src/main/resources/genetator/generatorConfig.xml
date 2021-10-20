@@ -27,18 +27,19 @@
         </sqlMapGenerator>
         <!--配置DAO存放路径-->
         <javaClientGenerator targetPackage="com.yun.dao.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
-        <table tableName="company" schema="yun"/>
-        <table tableName="company_admin" schema="yun"/>
-        <table tableName="company_receive_resume_record" schema="yun"/>
-        <table tableName="customer" schema="yun"/>
-        <table tableName="honor" schema="yun"/>
-        <table tableName="job" schema="yun"/>
-        <table tableName="job_collection" schema="yun"/>
-        <table tableName="project_experience" schema="yun"/>
-        <table tableName="resume" schema="yun"/>
-        <table tableName="resume_delivery_record" schema="yun"/>
-        <table tableName="skill" schema="yun"/>
-        <table tableName="user" schema="yun"/>
-        <table tableName="work_experience" schema="yun"/>
+<!--        <table tableName="company" schema="yun"/>-->
+        <table tableName="customer_collection"/>
+<!--        <table tableName="company_admin" schema="yun"/>-->
+<!--        <table tableName="company_receive_resume_record" schema="yun"/>-->
+<!--        <table tableName="customer" schema="yun"/>-->
+<!--        <table tableName="honor" schema="yun"/>-->
+<!--        <table tableName="job" schema="yun"/>-->
+<!--        <table tableName="job_collection" schema="yun"/>-->
+<!--        <table tableName="project_experience" schema="yun"/>-->
+<!--        <table tableName="resume" schema="yun"/>-->
+<!--        <table tableName="resume_delivery_record" schema="yun"/>-->
+<!--        <table tableName="skill" schema="yun"/>-->
+<!--        <table tableName="user" schema="yun"/>-->
+<!--        <table tableName="work_experience" schema="yun"/>-->
     </context>
 </generatorConfiguration>
