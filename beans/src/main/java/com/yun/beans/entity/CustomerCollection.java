@@ -28,7 +28,7 @@ public class CustomerCollection {
      * 收藏时间
      */
     @Column(name = "collection_time")
-    private Date collectionTime;
+    private String collectionTime;
 
     /**
      * 获取收藏id
@@ -89,7 +89,7 @@ public class CustomerCollection {
      *
      * @return collection_time - 收藏时间
      */
-    public Date getCollectionTime() {
+    public String getCollectionTime() {
         return collectionTime;
     }
 
@@ -98,7 +98,7 @@ public class CustomerCollection {
      *
      * @param collectionTime 收藏时间
      */
-    public void setCollectionTime(Date collectionTime) {
+    public void setCollectionTime(String collectionTime) {
         this.collectionTime = collectionTime;
     }
 }

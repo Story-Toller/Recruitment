@@ -8,6 +8,6 @@
     <id column="collection_id" jdbcType="INTEGER" property="collectionId" />
     <result column="job_id" jdbcType="VARCHAR" property="jobId" />
     <result column="cust_id" jdbcType="INTEGER" property="custId" />
-    <result column="collection_time" jdbcType="TIMESTAMP" property="collectionTime" />
+    <result column="collection_time" jdbcType="VARCHAR" property="collectionTime" />
   </resultMap>
 </mapper>
