@@ -1,13 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.CustomerCollectionMapper">
-  <resultMap id="BaseResultMap" type="com.yun.beans.entity.CustomerCollection">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="collection_id" jdbcType="INTEGER" property="collectionId" />
-    <result column="job_id" jdbcType="VARCHAR" property="jobId" />
-    <result column="cust_id" jdbcType="INTEGER" property="custId" />
-    <result column="collection_time" jdbcType="VARCHAR" property="collectionTime" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.yun.beans.entity.CustomerCollection">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="collection_id" jdbcType="INTEGER" property="collectionId"/>
+        <result column="job_id" jdbcType="VARCHAR" property="jobId"/>
+        <result column="cust_id" jdbcType="INTEGER" property="custId"/>
+        <result column="collection_time" jdbcType="VARCHAR" property="collectionTime"/>
+    </resultMap>
+    <resultMap id="JobCollectionVoMap" type="com.yun.beans.vo.JobCollectionVo">
+        <id column="collection_id" jdbcType="INTEGER" property="collectionId"/>
+        <result column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
+        <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
+        <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
+        <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
+        <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
+        <result column="job_other1" jdbcType="VARCHAR" property="jobOther1"/>
+        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+        <result column="company_logo" jdbcType="VARCHAR" property="companyLogo"/>
+        <result column="collection_time" jdbcType="VARCHAR" property="collectionTime"/>
+        <result column="cust_id" jdbcType="INTEGER" property="custId"/>
+    </resultMap>
+    <select id="showJobCollection" resultMap="JobCollectionVoMap">
+        SELECT c.collection_id,
+               c.collection_time,
+               j.job_id,
+               j.job_name,
+               j.job_city,
+               j.job_year,
+               j.job_min_salary,
+               j.job_max_salary,
+               j.job_other1,
+               p.company_logo,
+               p.company_name
+        from customer_collection c
+                 INNER JOIN job j
+                 INNER JOIN company p
+                            on c.job_id = j.job_id and p.company_id = j.company_id
+        where cust_id = #{custId}
+    </select>
 </mapper>

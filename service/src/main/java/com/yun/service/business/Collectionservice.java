@@ -6,4 +6,6 @@ import com.yun.sysytem.vo.ResultVo;
 public interface Collectionservice {
 //    收藏职位信息
     ResultVo addCollection(CustomerCollection customerCollection);
+
+    ResultVo showCollectionByCusId(Integer custId);
 }

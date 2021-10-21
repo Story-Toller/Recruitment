@@ -10,3 +10,5 @@ public class ResStatus {
     //用户token不合法
     public static final int LOGIN_WRONGFUL = 10004;
 }
+
+
