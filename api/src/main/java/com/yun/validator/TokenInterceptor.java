@@ -25,7 +25,7 @@ public class TokenInterceptor implements HandlerInterceptor {
         String token = request.getHeader("token");
         System.out.println("----------------" + token);
         if (token == null) {
-            ResultVo resultVo = new ResultVo(ResStatus.NO, "请先登录", null);
+            ResultVo resultVo = new ResultVo(ResStatus.NOT_LOGIN, "请先登录", null);
 //            提示请先登录
             doResponse(response, resultVo);
             return false;
@@ -39,10 +39,10 @@ public class TokenInterceptor implements HandlerInterceptor {
                 Jws<Claims> claimsJws = parser.parseClaimsJws(token);
                 return true;
             } catch (ExpiredJwtException e) {
-                ResultVo resultVo = new ResultVo(ResStatus.NO, "登录过期，请重新登录", null);
+                ResultVo resultVo = new ResultVo(ResStatus.LOGIN_TIMEOUT, "登录过期，请重新登录", null);
                 doResponse(response, resultVo);
             } catch (UnsupportedJwtException e) {
-                ResultVo resultVo = new ResultVo(ResStatus.NO, "token不合法", null);
+                ResultVo resultVo = new ResultVo(ResStatus.LOGIN_WRONGFUL, "token不合法", null);
                 doResponse(response, resultVo);
             } catch (Exception e) {
                 ResultVo resultVo = new ResultVo(ResStatus.NO, "请先登录吧", null);
