@@ -67,9 +67,9 @@ public class CustomerServiceImpl implements CustomerService {
             if (s.equals(customer.get(0).getCustPassword())) {
                 JwtBuilder builder = Jwts.builder();
                 HashMap<String, Object> objectObjectHashMap = new HashMap<>();
-                objectObjectHashMap.put("key1","value1");
-                objectObjectHashMap.put("key2","value2");
-                objectObjectHashMap.put("key3","value3");
+                objectObjectHashMap.put("key1", "value1");
+                objectObjectHashMap.put("key2", "value2");
+                objectObjectHashMap.put("key3", "value3");
 
                 String token = builder.setSubject(customer.get(0).getCustName())           //设置token中携带的数据
                         .setIssuedAt(new Date())                            //设置token生成时间
@@ -89,8 +89,14 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ResultVo updateInfor(String name, String phone, String email, String sex) {
-
-        return null;
+    public ResultVo updateBashInfor(int cusId, String cusName,
+                                    String cusPhone, String cusEmail,
+                                    String other2) {
+        int i = customerMapper.updateBashInfroByCusId(cusId, cusName, cusPhone, cusEmail, other2);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", null);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
     }
 }

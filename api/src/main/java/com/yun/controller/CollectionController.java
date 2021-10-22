@@ -36,5 +36,18 @@ public class CollectionController {
             ResultVo resultVo = collectionservice.showCollectionByCusId(custId);
             ResultVo resultVo1 = new ResultVo(ResStatus.OK, "success", resultVo);
             return resultVo1;
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 }

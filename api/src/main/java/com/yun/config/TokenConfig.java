@@ -17,6 +17,7 @@ public class TokenConfig implements WebMvcConfigurer {
         registry.addInterceptor(tokenInterceptor)
                 .addPathPatterns("/resume/**")
                 .addPathPatterns("/collection/**")
+                .addPathPatterns("/updateCusInf/**")
                 .excludePathPatterns("/customer/**");
     }
 }

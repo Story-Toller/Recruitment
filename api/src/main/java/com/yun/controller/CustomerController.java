@@ -2,6 +2,7 @@ package com.yun.controller;
 
 import com.yun.beans.entity.Customer;
 import com.yun.service.business.CustomerService;
+import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
@@ -39,7 +40,24 @@ public class CustomerController {
     })
     @PostMapping("/regiest")
     public ResultVo regiest(@RequestBody Customer customer) {
-        ResultVo resultVo = customerService.customerResgit(customer.getCustEmail(), customer.getCustPassword(),customer.getCustName());
+        ResultVo resultVo = customerService.customerResgit(customer.getCustEmail(), customer.getCustPassword(), customer.getCustName());
+        return resultVo;
+    }
+
+
+    @ApiOperation("用户修改基本信息接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "cusEmail", value = "应聘者邮箱", required = true),
+            @ApiImplicitParam(dataType = "String", name = "cusPhone", value = "应聘者手机号", required = true),
+            @ApiImplicitParam(dataType = "String", name = "cusName", value = "应聘者用户名", required = true),
+            @ApiImplicitParam(dataType = "String", name = "other2", value = "应聘者性别", required = true)
+
+    })
+    @PutMapping("/updateCusInf/{cusId}/{cusName}/{cusPhone}/{cusEmail}/{other2}")
+    public ResultVo updateCusInfor(@PathVariable("cusId") int cusId, @PathVariable("cusName") String cusName,
+                                   @PathVariable("cusPhone") String cusPhone, @PathVariable("cusEmail") String cusEmail,
+                                   @PathVariable("other2") String other2, @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updateBashInfor(cusId, cusName, cusPhone, cusEmail, other2);
         return resultVo;
     }
 

@@ -27,6 +27,7 @@
     <select id="showJobCollection" resultMap="JobCollectionVoMap">
         SELECT c.collection_id,
                c.collection_time,
+               c.cust_id,
                j.job_id,
                j.job_name,
                j.job_city,
