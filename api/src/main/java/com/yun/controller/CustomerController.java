@@ -50,7 +50,9 @@ public class CustomerController {
             @ApiImplicitParam(dataType = "String", name = "cusEmail", value = "应聘者邮箱", required = true),
             @ApiImplicitParam(dataType = "String", name = "cusPhone", value = "应聘者手机号", required = true),
             @ApiImplicitParam(dataType = "String", name = "cusName", value = "应聘者用户名", required = true),
-            @ApiImplicitParam(dataType = "String", name = "other2", value = "应聘者性别", required = true)
+            @ApiImplicitParam(dataType = "String", name = "other2", value = "应聘者性别", required = true),
+            @ApiImplicitParam(dataType = "String", name = "cusId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
 
     })
     @PutMapping("/updateCusInf/{cusId}/{cusName}/{cusPhone}/{cusEmail}/{other2}")

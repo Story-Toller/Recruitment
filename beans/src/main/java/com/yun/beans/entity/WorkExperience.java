@@ -1,8 +1,15 @@
 package com.yun.beans.entity;
 
+import lombok.*;
+
 import java.util.Date;
 import javax.persistence.*;
 
+@Data
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "work_experience")
 public class WorkExperience {
     /**
@@ -22,13 +29,13 @@ public class WorkExperience {
      * 工作经验开始时间
      */
     @Column(name = "work_start_time")
-    private Date workStartTime;
+    private String workStartTime;
 
     /**
      * 工作经验结束时间
      */
     @Column(name = "work_end_time")
-    private Date workEndTime;
+    private String workEndTime;
 
     /**
      * 工作经验所在公司名称
@@ -114,41 +121,6 @@ public class WorkExperience {
         this.resumeId = resumeId;
     }
 
-    /**
-     * 获取工作经验开始时间
-     *
-     * @return work_start_time - 工作经验开始时间
-     */
-    public Date getWorkStartTime() {
-        return workStartTime;
-    }
-
-    /**
-     * 设置工作经验开始时间
-     *
-     * @param workStartTime 工作经验开始时间
-     */
-    public void setWorkStartTime(Date workStartTime) {
-        this.workStartTime = workStartTime;
-    }
-
-    /**
-     * 获取工作经验结束时间
-     *
-     * @return work_end_time - 工作经验结束时间
-     */
-    public Date getWorkEndTime() {
-        return workEndTime;
-    }
-
-    /**
-     * 设置工作经验结束时间
-     *
-     * @param workEndTime 工作经验结束时间
-     */
-    public void setWorkEndTime(Date workEndTime) {
-        this.workEndTime = workEndTime;
-    }
 
     /**
      * 获取工作经验所在公司名称

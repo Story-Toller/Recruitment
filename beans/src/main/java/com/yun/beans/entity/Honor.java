@@ -21,7 +21,7 @@ public class Honor {
      * 获奖时间
      */
     @Column(name = "honor_create_time")
-    private Date honorCreateTime;
+    private String honorCreateTime;
 
     /**
      * 奖项名称
@@ -80,7 +80,7 @@ public class Honor {
      *
      * @return honor_create_time - 获奖时间
      */
-    public Date getHonorCreateTime() {
+    public String getHonorCreateTime() {
         return honorCreateTime;
     }
 
@@ -89,7 +89,7 @@ public class Honor {
      *
      * @param honorCreateTime 获奖时间
      */
-    public void setHonorCreateTime(Date honorCreateTime) {
+    public void setHonorCreateTime(String honorCreateTime) {
         this.honorCreateTime = honorCreateTime;
     }
 
