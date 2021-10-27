@@ -1,7 +1,7 @@
 package com.yun.controller;
 
 
-import com.yun.beans.entity.Customer;
+import com.yun.beans.entity.*;
 import com.yun.service.business.ResumeService;
 import com.yun.sysytem.vo.ResultVo;
 import io.swagger.annotations.Api;
@@ -59,10 +59,9 @@ public class ResumeController {
             @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
     })
     @PostMapping("/honor")
-    public ResultVo honor(@RequestParam("resumeId") Integer resumeId, @RequestParam("honorCreateTime") String honorCreateTime,
-                          @RequestParam("honorName") String honorName, @RequestParam("honorGrade") String honorGrade,
-                          @RequestHeader("token") String token) {
-        ResultVo resultVo = resumeService.honorInsert(resumeId, honorCreateTime, honorName, honorGrade);
+    public ResultVo honor(@RequestBody Honor honor, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.honorInsert(honor.getResumeId(), honor.getHonorCreateTime(),
+                honor.getHonorName(), honor.getHonorGrade());
         return resultVo;
     }
 
@@ -79,12 +78,11 @@ public class ResumeController {
             @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
     })
     @PostMapping("/project")
-    public ResultVo projectExp(@RequestParam("resumeId") Integer resumeId, @RequestParam("projectCompanyName") String projectCompanyName,
-                               @RequestParam("projectStartTime") String projectStartTime,
-                               @RequestParam("projectEndTime") String projectEndTime, @RequestParam("projectName") String projectName,
-                               @RequestParam("projectContentDesc") String projectContentDesc, @RequestParam("projectDutyDesc") String projectDutyDesc,
-                               @RequestHeader("token") String token) {
-        ResultVo resultVo = resumeService.projectExpInsert(resumeId, projectCompanyName, projectStartTime, projectEndTime, projectName, projectContentDesc, projectDutyDesc);
+    public ResultVo projectExp(@RequestBody ProjectExperience projectExperience, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.projectExpInsert(projectExperience.getResumeId(), projectExperience.getProjectName(),
+                projectExperience.getProjectStartTime(), projectExperience.getProjectEndTime(),
+                projectExperience.getProjectCompanyName(), projectExperience.getProjectContentDesc(),
+                projectExperience.getProjectDutyDesc());
         return resultVo;
     }
 
@@ -102,12 +100,10 @@ public class ResumeController {
             @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
     })
     @PostMapping("/work")
-    public ResultVo workExpInsert(@RequestParam("resumeId") Integer resumeId, @RequestParam("workStartTime") String workStartTime,
-                                  @RequestParam("workEndTime") String workEndTime, @RequestParam("workCompanyName") String workCompanyName,
-                                  @RequestParam("workPosition") String workPosition, @RequestParam("workDepartment") String workDepartment,
-                                  @RequestParam("workCompanyScaler") String workCompanyScaler, @RequestParam("workCompanyProperty") String workCompanyProperty,
-                                  @RequestParam("workDesc") String workDesc, @RequestHeader("token") String token) {
-        ResultVo resultVo = resumeService.workExpInsert(resumeId, workStartTime, workEndTime, workCompanyName, workPosition, workDepartment, workCompanyScaler, workCompanyProperty, workDesc);
+    public ResultVo workExpInsert(@RequestBody WorkExperience workExperience, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.workExpInsert(workExperience.getResumeId(), workExperience.getWorkStartTime(), workExperience.getWorkEndTime(),
+                workExperience.getWorkCompanyName(), workExperience.getWorkPosition(), workExperience.getWorkDepartment(),
+                workExperience.getWorkCompanyScaler(), workExperience.getWorkCompanyProperty(), workExperience.getWorkDesc());
         return resultVo;
     }
 
@@ -120,9 +116,8 @@ public class ResumeController {
             @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
     })
     @PostMapping("/skill")
-    public ResultVo skillInsert(@RequestParam("resumeId") Integer resumeId, @RequestParam("skillName") String skillName,
-                                @RequestParam("skillDesc") String skillDesc, @RequestHeader("token") String token) {
-        ResultVo resultVo = resumeService.skillInsert(resumeId, skillName, skillDesc);
+    public ResultVo skillInsert(@RequestBody Skill skill, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.skillInsert(skill.getResumeId(), skill.getSkillName(), skill.getSkillDesc());
         return resultVo;
     }
 }

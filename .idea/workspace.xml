@@ -4,12 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="company_admin表新增字段company_admin_position和company_admin_img">
-      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/vo/CompanyVo.java" afterDir="false" />
+    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="新增页面状态码并添加收藏页面至security托管">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CustomerCenterController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/CustomerCenterService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CustomerCenterServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CompanyController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CompanyController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/config/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/config/TokenConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CompanyMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CompanyMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +51,11 @@
         <option name="userSettingsFile" value="D:\apache-maven-3.8.1-bin\apache-maven-3.8.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
+    <option name="enabledProfiles">
+      <list>
+        <option value="nexus" />
+      </list>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="sortByName" value="true" />
@@ -72,7 +83,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/mapper/src/main/resources/mappers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Recruiter" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -82,10 +93,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Graduation Design\Recruitment\mapper\src\main\resources\mappers" />
+      <recent name="D:\Graduation Design\Recruitment\mapper\src\main\resources\genetator" />
       <recent name="D:\Graduation Design\Recruitment\beans\src\main\java\com\yun\beans\vo" />
       <recent name="D:\Graduation Design\Recruitment\mapper\src\main\java\com\yun\dao\mapper" />
       <recent name="D:\Graduation Design\Recruitment\beans\src\main\java\com\yun\beans\entity" />
-      <recent name="D:\Graduation Design\Recruitment" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -100,40 +111,22 @@
       <recent name="com.yun.dao.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.yun.recruiter.controller" />
       <recent name="com.yun.beans.entity" />
       <recent name="com.yun.beans.vo" />
       <recent name="com.yun" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
-    <configuration name="ApiApplicationTests.contextLoads3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads3" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiApplicationTests.contextLoads34" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads34" />
-      <option name="TEST_OBJECT" value="method" />
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -186,6 +179,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ApiApplicationTests.contextLoads9" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yun.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yun" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads9" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.yun.ApiApplication" />
@@ -193,29 +202,19 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="customer" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yun.customer.CustomerApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
       <item itemvalue="Spring Boot.ApiApplication" />
-      <item itemvalue="Spring Boot.CustomerApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads34" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads3" />
       </list>
     </recent_temporary>
   </component>
@@ -247,7 +246,29 @@
       <workItem from="1634519656336" duration="2538000" />
       <workItem from="1634526068565" duration="9849000" />
       <workItem from="1634605925483" duration="15862000" />
-      <workItem from="1634694243897" duration="916000" />
+      <workItem from="1634694243897" duration="2817000" />
+      <workItem from="1634701605767" duration="7193000" />
+      <workItem from="1634778968605" duration="5405000" />
+      <workItem from="1634788597676" duration="8083000" />
+      <workItem from="1634865183029" duration="11091000" />
+      <workItem from="1634913373975" duration="699000" />
+      <workItem from="1635061884535" duration="624000" />
+      <workItem from="1635064435355" duration="278000" />
+      <workItem from="1635067250663" duration="549000" />
+      <workItem from="1635067844960" duration="176000" />
+      <workItem from="1635124510776" duration="2278000" />
+      <workItem from="1635126833544" duration="832000" />
+      <workItem from="1635127988481" duration="3973000" />
+      <workItem from="1635132042625" duration="442000" />
+      <workItem from="1635132514915" duration="1859000" />
+      <workItem from="1635146028298" duration="1760000" />
+      <workItem from="1635148018119" duration="607000" />
+      <workItem from="1635150803003" duration="303000" />
+      <workItem from="1635151191722" duration="1104000" />
+      <workItem from="1635152569869" duration="515000" />
+      <workItem from="1635210897630" duration="980000" />
+      <workItem from="1635213612685" duration="16461000" />
+      <workItem from="1635297222454" duration="8974000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -389,7 +410,70 @@
       <option name="project" value="LOCAL" />
       <updated>1634630684074</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="完成公司详情展示的接口">
+      <created>1634697556549</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1634697556550</updated>
+    </task>
+    <task id="LOCAL-00022" summary="新增用户职位收藏表">
+      <created>1634700870622</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1634700870622</updated>
+    </task>
+    <task id="LOCAL-00023" summary="新增用户职位收藏表">
+      <created>1634700966963</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1634700966963</updated>
+    </task>
+    <task id="LOCAL-00024" summary="新增用户职位收藏接口">
+      <created>1634718027643</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1634718027643</updated>
+    </task>
+    <task id="LOCAL-00025" summary="新增用户职位收藏接口">
+      <created>1634718065389</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1634718065389</updated>
+    </task>
+    <task id="LOCAL-00026" summary="新增页面状态码并添加收藏页面至security托管">
+      <created>1634783054184</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1634783054184</updated>
+    </task>
+    <task id="LOCAL-00027" summary="提供显示收藏职位列表的接口">
+      <created>1634800782827</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1634800782827</updated>
+    </task>
+    <task id="LOCAL-00028" summary="提供用户自定义基本信息的接口">
+      <created>1634882482769</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1634882482769</updated>
+    </task>
+    <task id="LOCAL-00029" summary="提供了创建简历的接口">
+      <created>1635232871005</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1635232871005</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -426,7 +510,14 @@
     <MESSAGE value="新增查询职位详情信息的接口" />
     <MESSAGE value="company表新增字段companyLegalPerson,companyRegisteredCapital,companySetData" />
     <MESSAGE value="提供展示公司详情的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="提供展示公司详情的接口" />
+    <MESSAGE value="完成公司详情展示的接口" />
+    <MESSAGE value="新增用户职位收藏表" />
+    <MESSAGE value="新增用户职位收藏接口" />
+    <MESSAGE value="新增页面状态码并添加收藏页面至security托管" />
+    <MESSAGE value="提供显示收藏职位列表的接口" />
+    <MESSAGE value="提供用户自定义基本信息的接口" />
+    <MESSAGE value="提供了创建简历的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="提供了创建简历的接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -434,10 +525,6 @@
         <breakpoint enabled="true" type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
-        </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
-          <properties class="tk.mybatis.mapper.MapperException" package="tk.mybatis.mapper" />
-          <option name="timeStamp" value="4" />
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>

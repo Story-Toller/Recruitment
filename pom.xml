@@ -19,7 +19,7 @@
         <module>service</module>
         <module>mapper</module>
         <module>api</module>
-        <module>customer</module>
+        <module>recruiter</module>
     </modules>
     <packaging>pom</packaging>
 

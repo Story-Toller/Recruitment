@@ -12,12 +12,13 @@
         <module name="common" />
         <module name="service" />
         <module name="beans" />
-        <module name="customer" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="admin" target="11" />
       <module name="boss" target="11" />
+      <module name="customer" target="11" />
+      <module name="recruiter" target="11" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
@@ -29,6 +30,7 @@
       <module name="common" options="-parameters" />
       <module name="customer" options="-parameters" />
       <module name="mapper" options="-parameters" />
+      <module name="recruiter" options="-parameters" />
       <module name="service" options="-parameters" />
     </option>
   </component>

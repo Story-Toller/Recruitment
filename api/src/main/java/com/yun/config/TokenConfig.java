@@ -18,6 +18,7 @@ public class TokenConfig implements WebMvcConfigurer {
                 .addPathPatterns("/resume/**")
                 .addPathPatterns("/collection/**")
                 .addPathPatterns("/updateCusInf/**")
+                .addPathPatterns("/customerCenter/**")
                 .excludePathPatterns("/customer/**");
     }
 }
