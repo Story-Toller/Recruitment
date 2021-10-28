@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="新增页面状态码并添加收藏页面至security托管">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CustomerCenterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/CustomerCenterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CustomerCenterServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/config/TokenConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/config/TokenConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,19 +111,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ApiApplicationTests.contextLoads5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -268,7 +248,9 @@
       <workItem from="1635152569869" duration="515000" />
       <workItem from="1635210897630" duration="980000" />
       <workItem from="1635213612685" duration="16461000" />
-      <workItem from="1635297222454" duration="8974000" />
+      <workItem from="1635297222454" duration="11115000" />
+      <workItem from="1635321823360" duration="3109000" />
+      <workItem from="1635387741229" duration="2959000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -473,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635232871005</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="新增我的页面基本信息展示以及简历展示的接口">
+      <created>1635316718714</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1635316718714</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -492,7 +481,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="整合项目架构" />
     <MESSAGE value="构建实体类" />
     <MESSAGE value="整合tkmapper，完成dao层接口，实体类，mapper.xml自动注入" />
     <MESSAGE value="mapper接口统一加入@Mapper注解" />
@@ -517,7 +505,8 @@
     <MESSAGE value="提供显示收藏职位列表的接口" />
     <MESSAGE value="提供用户自定义基本信息的接口" />
     <MESSAGE value="提供了创建简历的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="提供了创建简历的接口" />
+    <MESSAGE value="新增我的页面基本信息展示以及简历展示的接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增我的页面基本信息展示以及简历展示的接口" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
