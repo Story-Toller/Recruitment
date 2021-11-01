@@ -28,7 +28,7 @@
         <!--配置DAO存放路径-->
         <javaClientGenerator targetPackage="com.yun.dao.mapper" targetProject="src/main/java" type="XMLMAPPER"/>
 <!--        <table tableName="company" schema="yun"/>-->
-        <table tableName="customer_collection" schema="yun"/>
+        <table tableName="education" schema="yun"/>
 <!--        <table tableName="company_admin" schema="yun"/>-->
 <!--        <table tableName="company_receive_resume_record" schema="yun"/>-->
 <!--        <table tableName="customer" schema="yun"/>-->

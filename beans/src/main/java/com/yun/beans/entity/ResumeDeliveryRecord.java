@@ -34,7 +34,7 @@ public class ResumeDeliveryRecord {
      * 投递时间
      */
     @Column(name = "delivery_time")
-    private Date deliveryTime;
+    private String deliveryTime;
 
     @Column(name = "delivery_status")
     private Integer deliveryStatus;
@@ -120,7 +120,7 @@ public class ResumeDeliveryRecord {
      *
      * @return delivery_time - 投递时间
      */
-    public Date getDeliveryTime() {
+    public String getDeliveryTime() {
         return deliveryTime;
     }
 
@@ -129,7 +129,7 @@ public class ResumeDeliveryRecord {
      *
      * @param deliveryTime 投递时间
      */
-    public void setDeliveryTime(Date deliveryTime) {
+    public void setDeliveryTime(String deliveryTime) {
         this.deliveryTime = deliveryTime;
     }
 

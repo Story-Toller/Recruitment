@@ -2,11 +2,13 @@ package com.yun;
 
 import com.yun.beans.entity.Company;
 import com.yun.beans.entity.JobVo;
+import com.yun.beans.vo.DeliverJobVo;
 import com.yun.beans.vo.JobCollectionVo;
 import com.yun.beans.vo.JobDesVo;
 import com.yun.dao.mapper.CompanyMapper;
 import com.yun.dao.mapper.CustomerCollectionMapper;
 import com.yun.dao.mapper.JobMapper;
+import com.yun.dao.mapper.ResumeDeliveryRecordMapper;
 import com.yun.service.business.ResumeService;
 import org.junit.jupiter.api.Test;
 import org.mybatis.spring.annotation.MapperScan;
@@ -27,6 +29,9 @@ class ApiApplicationTests {
     CustomerCollectionMapper customerCollectionMapper;
     @Autowired
     ResumeService resumeService;
+    @Autowired
+    ResumeDeliveryRecordMapper
+            resumeDeliveryRecordMapper;
 
 
     @Test
@@ -125,6 +130,13 @@ class ApiApplicationTests {
         String time="2017-9-8";
         String gra="第一名";
         String na="吹牛逼大师赛";
+//        resumeService.honorInsert()
+    }
+    @Test
+    void contextLoads11() {
+        Integer id=26;
+        List<DeliverJobVo> deliverJobVos = resumeDeliveryRecordMapper.showDeliverJob(id);
+        System.out.println(deliverJobVos);
 //        resumeService.honorInsert()
     }
 

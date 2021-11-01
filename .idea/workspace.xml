@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/DeliverResumeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/Education.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/vo/DeliverJobVo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/EducationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/EducationMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/DeliverResumeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/DeliverResumeServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/ResumeDeliveryRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/ResumeDeliveryRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/yun/sysytem/vo/ResStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/yun/sysytem/vo/ResStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/ResumeDeliveryRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/ResumeDeliveryRecordMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/genetator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/genetator/generatorConfig.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/ResumeDeliveryRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/ResumeDeliveryRecordMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CollectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CollectionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ResumeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,11 +95,11 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Recruiter" />
-    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.last.edited" value="SDKs" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.runner" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -104,13 +122,29 @@
       <recent name="com.yun.dao.mapper" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.yun.recruiter.controller" />
       <recent name="com.yun.beans.entity" />
+      <recent name="com.yun.recruiter.controller" />
       <recent name="com.yun.beans.vo" />
       <recent name="com.yun" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration name="ApiApplicationTests.contextLoads11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.yun.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.yun" />
+      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads11" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiApplicationTests.contextLoads5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -187,10 +221,12 @@
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads11" />
       <item itemvalue="Spring Boot.ApiApplication" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads11" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
@@ -250,7 +286,10 @@
       <workItem from="1635213612685" duration="16461000" />
       <workItem from="1635297222454" duration="11115000" />
       <workItem from="1635321823360" duration="3109000" />
-      <workItem from="1635387741229" duration="2959000" />
+      <workItem from="1635387741229" duration="12911000" />
+      <workItem from="1635470470295" duration="10825000" />
+      <workItem from="1635728943575" duration="615000" />
+      <workItem from="1635738357122" duration="25000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -462,7 +501,14 @@
       <option name="project" value="LOCAL" />
       <updated>1635316718714</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="细节调整">
+      <created>1635392686847</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1635392686847</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +527,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="构建实体类" />
     <MESSAGE value="整合tkmapper，完成dao层接口，实体类，mapper.xml自动注入" />
     <MESSAGE value="mapper接口统一加入@Mapper注解" />
     <MESSAGE value="新增招聘者登陆注册接口" />
@@ -506,7 +551,8 @@
     <MESSAGE value="提供用户自定义基本信息的接口" />
     <MESSAGE value="提供了创建简历的接口" />
     <MESSAGE value="新增我的页面基本信息展示以及简历展示的接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增我的页面基本信息展示以及简历展示的接口" />
+    <MESSAGE value="细节调整" />
+    <option name="LAST_COMMIT_MESSAGE" value="细节调整" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

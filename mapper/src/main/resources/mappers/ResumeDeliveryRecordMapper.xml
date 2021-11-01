@@ -1,17 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.ResumeDeliveryRecordMapper">
-  <resultMap id="BaseResultMap" type="com.yun.beans.entity.ResumeDeliveryRecord">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="resume_delivery_record_id" jdbcType="INTEGER" property="resumeDeliveryRecordId" />
-    <result column="cust_id" jdbcType="INTEGER" property="custId" />
-    <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
-    <result column="job_id" jdbcType="INTEGER" property="jobId" />
-    <result column="delivery_time" jdbcType="TIMESTAMP" property="deliveryTime" />
-    <result column="delivery_status" jdbcType="INTEGER" property="deliveryStatus" />
-    <result column="other1" jdbcType="VARCHAR" property="other1" />
-    <result column="other2" jdbcType="VARCHAR" property="other2" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.yun.beans.entity.ResumeDeliveryRecord">
+        <id column="resume_delivery_record_id" jdbcType="INTEGER" property="resumeDeliveryRecordId"/>
+        <result column="cust_id" jdbcType="INTEGER" property="custId"/>
+        <result column="resume_id" jdbcType="INTEGER" property="resumeId"/>
+        <result column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="delivery_time" jdbcType="TIMESTAMP" property="deliveryTime"/>
+        <result column="delivery_status" jdbcType="INTEGER" property="deliveryStatus"/>
+        <result column="other1" jdbcType="VARCHAR" property="other1"/>
+        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+    </resultMap>
+    <resultMap id="DeliverJobVo" type="com.yun.beans.vo.DeliverJobVo">
+        <result column="cust_id" jdbcType="INTEGER" property="custId"/>
+        <result column="resume_id" jdbcType="INTEGER" property="resumeId"/>
+        <result column="job_id" jdbcType="INTEGER" property="jobId"/>
+        <result column="delivery_time" jdbcType="TIMESTAMP" property="deliveryTime"/>
+        <result column="job_name" jdbcType="VARCHAR" property="jobName"/>
+        <result column="job_city" jdbcType="VARCHAR" property="jobCity"/>
+        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_min_salary" jdbcType="DECIMAL" property="jobMinSalary"/>
+        <result column="job_max_salary" jdbcType="DECIMAL" property="jobMaxSalary"/>
+        <result column="company_name" jdbcType="VARCHAR" property="companyName"/>
+        <result column="company_logo" jdbcType="VARCHAR" property="companyLogo"/>
+        <result column="job_other1" jdbcType="VARCHAR" property="jobOther1"/>
+    </resultMap>
+    <select id="showDeliverJob" resultMap="DeliverJobVo">
+        select r.job_id,
+               r.cust_id,
+               r.delivery_time,
+               r.resume_id,
+               j.job_name,
+               j.job_city,
+               j.job_publish_time,
+               j.job_min_salary,
+               j.job_max_salary,
+               j.job_other1,
+               c.company_name,
+               c.company_logo
+        from resume_delivery_record r
+                 INNER JOIN job j
+                 INNER JOIN company c
+                            on r.job_id = j.job_id and j.company_id = c.company_id
+        where cust_id = #{custId}
+    </select>
 </mapper>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.yun.dao.mapper.EducationMapper">
+  <resultMap id="BaseResultMap" type="com.yun.beans.entity.Education">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="edu_id" jdbcType="INTEGER" property="eduId" />
+    <result column="resume_id" jdbcType="INTEGER" property="resumeId" />
+    <result column="edu_level" jdbcType="VARCHAR" property="eduLevel" />
+    <result column="edu_name" jdbcType="VARCHAR" property="eduName" />
+    <result column="edu_start" jdbcType="VARCHAR" property="eduStart" />
+    <result column="edu_stop" jdbcType="VARCHAR" property="eduStop" />
+    <result column="edu_pro" jdbcType="VARCHAR" property="eduPro" />
+  </resultMap>
+</mapper>

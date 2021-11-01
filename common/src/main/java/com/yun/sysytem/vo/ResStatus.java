@@ -9,6 +9,8 @@ public class ResStatus {
     public static final int LOGIN_TIMEOUT = 10003;
     //用户token不合法
     public static final int LOGIN_WRONGFUL = 10004;
+    //    过度收藏
+    public static final int CANNOTCOLL = 10005;
 }
 
 

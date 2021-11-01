@@ -50,4 +50,11 @@ public class ShowResumeController {
         ResultVo resultVo = showResumeService.showProject(resumeId);
         return resultVo;
     }
+
+    @GetMapping("/education/{resumeId}")
+    @ApiOperation("查询学历信息的接口")
+    public ResultVo showEducation(@PathVariable("resumeId")Integer resumeId) {
+        ResultVo resultVo = showResumeService.showEducation(resumeId);
+        return resultVo;
+    }
 }

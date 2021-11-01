@@ -21,31 +21,28 @@ public class ResumeController {
     ResumeService resumeService;
 
     @ApiOperation("添加简历基本信息接口")
-    @ApiImplicitParams({
-            @ApiImplicitParam(dataType = "Integer", name = "custId", value = "用户id", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeName", value = "简历名称", required = true),
-            @ApiImplicitParam(dataType = "String", name = "reusmeRealName", value = "简历中用户名字", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeBirth", value = "简历中用户生日", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeTelno", value = "简历中用户电话", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeEmail", value = "简历中用户邮箱", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeGender", value = "简历中用户性别", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeLeavingWorking", value = "简历中用户职位状态", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeLiveCity", value = "简历中用户居住地", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumePersonid", value = "简历中用户应聘职位", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeIncome", value = "简历中用户期望月收入", required = true),
-            @ApiImplicitParam(dataType = "String", name = "resumeFullPartTime", value = "简历中用户应聘职位类别", required = true),
-            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true),
-    })
-
-    @PostMapping("/crebash")
-    public ResultVo bashInfor(@RequestParam("custId") Integer custId, @RequestParam("resumeName") String resumeName,
-                              @RequestParam("reusmeRealName") String reusmeRealName, @RequestParam("resumeBirth") String resumeBirth,
-                              @RequestParam("resumeTelno") String resumeTelno, @RequestParam("resumeEmail") String resumeEmail,
-                              @RequestParam("resumeGender") String resumeGender, @RequestParam("resumeLeavingWorking") String resumeLeavingWorking,
-                              @RequestParam("resumeLiveCity") String resumeLiveCity, @RequestParam("resumePersonid") String resumePersonid, @RequestParam("resumeIncome") String resumeIncome,
-                              @RequestParam("resumeFullPartTime") String resumeFullPartTime, @RequestHeader("token") String token) {
-        ResultVo resultVo = resumeService.bashInforInsert(custId, resumeName, reusmeRealName, resumeBirth, resumeTelno, resumeEmail,
-                resumeGender, resumeLeavingWorking, resumeLiveCity, resumePersonid, resumeIncome, resumeFullPartTime);
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(dataType = "Integer", name = "custId", value = "用户id", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "reusmeRealName", value = "简历中用户名字", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeBirth", value = "简历中用户生日", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeTelno", value = "简历中用户电话", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeEmail", value = "简历中用户邮箱", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeGender", value = "简历中用户性别", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeLeavingWorking", value = "简历中用户职位状态", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeLiveCity", value = "简历中用户居住地", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumePersonid", value = "简历中用户应聘职位", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeIncome", value = "简历中用户期望月收入", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "resumeFullPartTime", value = "简历中用户应聘职位类别", required = true),
+//            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true),
+//    })
+    @PostMapping("/bashIns")
+    public ResultVo bashInfor(@RequestBody Resume resume, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.bashInforInsert(resume.getCustId(), resume.getResumeName(),
+                resume.getReusmeRealName(), resume.getResumeBirth(),
+                resume.getResumeTelno(), resume.getResumeEmail(),
+                resume.getResumeGender(), resume.getResumeLeavingWorking(),
+                resume.getResumeLiveCity(), resume.getResumeIncome(),
+                resume.getResumePersonid(), resume.getResumeFullPartTime());
         return resultVo;
     }
 
@@ -118,6 +115,25 @@ public class ResumeController {
     @PostMapping("/skill")
     public ResultVo skillInsert(@RequestBody Skill skill, @RequestHeader("token") String token) {
         ResultVo resultVo = resumeService.skillInsert(skill.getResumeId(), skill.getSkillName(), skill.getSkillDesc());
+        return resultVo;
+    }
+
+
+    @ApiOperation("添加简历学历接口")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "Integer", name = "resumeId", value = "简历id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "eduLevel", value = "学历等级", required = true),
+            @ApiImplicitParam(dataType = "String", name = "eduName", value = "学校名称", required = true),
+            @ApiImplicitParam(dataType = "String", name = "eduStart", value = "入学时间", required = true),
+            @ApiImplicitParam(dataType = "String", name = "eduStop", value = "毕业时间", required = true),
+            @ApiImplicitParam(dataType = "String", name = "eduPro", value = "专业", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
+    })
+    @PostMapping("/educate")
+    public ResultVo educationInsert(@RequestBody Education education, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.educationInsert(education.getResumeId(),
+                education.getEduLevel(), education.getEduName(), education.getEduStart(), education.getEduStop(),
+                education.getEduPro());
         return resultVo;
     }
 }

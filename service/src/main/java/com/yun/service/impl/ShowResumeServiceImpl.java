@@ -26,6 +26,8 @@ public class ShowResumeServiceImpl implements ShowResumeService {
     WorkExperienceMapper workExperienceMapper;
     @Autowired
     ProjectExperienceMapper projectExperienceMapper;
+    @Autowired
+    EducationMapper educationMapper;
 
 
     @Override
@@ -72,6 +74,16 @@ public class ShowResumeServiceImpl implements ShowResumeService {
         criteria.andEqualTo("resumeId",resumeId);
         List<ProjectExperience> projectExperiences = projectExperienceMapper.selectByExample(example);
         ResultVo resultVo = new ResultVo(ResStatus.OK, "success", projectExperiences);
+        return resultVo;
+    }
+
+    @Override
+    public ResultVo showEducation(Integer resumeId) {
+        Example example = new Example(Education.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("resumeId",resumeId);
+        List<Education> educations = educationMapper.selectByExample(example);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", educations);
         return resultVo;
     }
 }

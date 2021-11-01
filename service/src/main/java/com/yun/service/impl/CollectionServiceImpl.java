@@ -26,15 +26,24 @@ public class CollectionServiceImpl implements Collectionservice {
 
     @Override
     public ResultVo addCollection(CustomerCollection customerCollection) {
-        customerCollection.setCollectionTime(s.format(new Date()));
-        int insert = customerCollectionMapper.insert(customerCollection);
+        Example example = new Example(CustomerCollection.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("jobId", customerCollection.getJobId());
+        List<CustomerCollection> customerCollections = customerCollectionMapper.selectByExample(example);
 
-        if (insert > 0) {
+        if (customerCollections.size() == 0) {
+            customerCollection.setCollectionTime(s.format(new Date()));
+            int insert = customerCollectionMapper.insert(customerCollection);
 
-            return new ResultVo(ResStatus.OK, "success", null);
+            if (insert > 0) {
 
-        } else {
-            return new ResultVo(ResStatus.NO, "failed", null);
+                return new ResultVo(ResStatus.OK, "success", null);
+
+            } else {
+                return new ResultVo(ResStatus.NO, "failed", null);
+            }
+        }else {
+            return new ResultVo(ResStatus.CANNOTCOLL, "请勿二次收藏", null);
         }
 
     }

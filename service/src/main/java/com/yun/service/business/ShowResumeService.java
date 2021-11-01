@@ -9,5 +9,6 @@ public interface ShowResumeService {
     ResultVo showSkill(Integer resumeId);
     ResultVo showWorkExpri(Integer resumeId);
     ResultVo showProject(Integer resumeId);
+    ResultVo showEducation(Integer resumeId);
 
 }
