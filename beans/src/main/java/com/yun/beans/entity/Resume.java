@@ -48,13 +48,13 @@ public class Resume {
      * 简历创建时间
      */
     @Column(name = "resume_create_time")
-    private Date resumeCreateTime;
+    private String resumeCreateTime;
 
     /**
      * 简历修改时间
      */
     @Column(name = "resume_update_time")
-    private Date resumeUpdateTime;
+    private String resumeUpdateTime;
 
     /**
      * 简历中头像

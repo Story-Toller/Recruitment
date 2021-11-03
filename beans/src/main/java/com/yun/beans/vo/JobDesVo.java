@@ -63,7 +63,7 @@ public class JobDesVo {
      * 发布时间
      */
     @Column(name = "job_publish_time")
-    private Date jobPublishTime;
+    private String jobPublishTime;
 
     /**
      * 福利

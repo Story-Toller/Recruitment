@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
@@ -17,6 +18,7 @@ public class ResumeServiceImpl implements ResumeService {
 
     @Autowired
     ResumeMapper resumeMapper;
+    SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
 
     @Autowired
     SkillMapper skillMapper;
@@ -48,7 +50,7 @@ public class ResumeServiceImpl implements ResumeService {
             resume.setCustId(custId);
             resume.setResumeName(resumeName);
             resume.setReusmeRealName(reusmeRealName);
-            resume.setResumeCreateTime(new Date());
+            resume.setResumeCreateTime(s.format(new Date()));
             resume.setResumeBirth(resumeBirth);
             resume.setResumeTelno(resumeTelno);
             resume.setResumeEmail(resumeEmail);

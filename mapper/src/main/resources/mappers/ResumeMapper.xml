@@ -8,10 +8,10 @@
         <id column="resume_id" jdbcType="INTEGER" property="resumeId"/>
         <result column="cust_id" jdbcType="INTEGER" property="custId"/>
         <result column="resume_name" jdbcType="VARCHAR" property="resumeName"/>
-        <result column="resume_create_time" jdbcType="TIMESTAMP" property="resumeCreateTime"/>
-        <result column="resume_update_time" jdbcType="TIMESTAMP" property="resumeUpdateTime"/>
+        <result column="resume_create_time" jdbcType="VARCHAR" property="resumeCreateTime"/>
+        <result column="resume_update_time" jdbcType="VARCHAR" property="resumeUpdateTime"/>
         <result column="resume_profile" jdbcType="VARCHAR" property="resumeProfile"/>
-        <result column="resume_birth" jdbcType="DATE" property="resumeBirth"/>
+        <result column="resume_birth" jdbcType="VARCHAR" property="resumeBirth"/>
         <result column="resume_telno" jdbcType="BIGINT" property="resumeTelno"/>
         <result column="resume_email" jdbcType="VARCHAR" property="resumeEmail"/>
         <result column="resume_gender" jdbcType="CHAR" property="resumeGender"/>

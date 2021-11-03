@@ -122,7 +122,7 @@ public class CompanyVo {
      * 公司管理员账户手机
      */
     @Column(name = "company_admin_telno")
-    private Long companyAdminTelno;
+    private String companyAdminTelno;
 
     /**
      * 公司管理员账户邮箱

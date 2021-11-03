@@ -10,7 +10,7 @@
         <result column="cust_telno" jdbcType="CHAR" property="custTelno"/>
         <result column="cust_email" jdbcType="VARCHAR" property="custEmail"/>
         <result column="cust_password" jdbcType="VARCHAR" property="custPassword"/>
-        <result column="cust_regist_time" jdbcType="TIMESTAMP" property="custRegistTime"/>
+        <result column="cust_regist_time" jdbcType="VARCHAR" property="custRegistTime"/>
         <result column="status" jdbcType="INTEGER" property="status"/>
         <result column="other1" jdbcType="VARCHAR" property="other1"/>
         <result column="other2" jdbcType="VARCHAR" property="other2"/>

@@ -10,7 +10,7 @@
         <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
         <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
         <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
-        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_publish_time" jdbcType="VARCHAR" property="jobPublishTime"/>
         <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
         <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
         <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>
@@ -30,7 +30,7 @@
         <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
         <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
         <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
-        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_publish_time" jdbcType="VARCHAR" property="jobPublishTime"/>
         <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
         <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
         <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>
@@ -53,7 +53,7 @@
         <result column="job_year" jdbcType="VARCHAR" property="jobYear"/>
         <result column="job_degree" jdbcType="VARCHAR" property="jobDegree"/>
         <result column="job_need_number" jdbcType="INTEGER" property="jobNeedNumber"/>
-        <result column="job_publish_time" jdbcType="TIMESTAMP" property="jobPublishTime"/>
+        <result column="job_publish_time" jdbcType="VARCHAR" property="jobPublishTime"/>
         <result column="job_welfare" jdbcType="VARCHAR" property="jobWelfare"/>
         <result column="job_duty" jdbcType="VARCHAR" property="jobDuty"/>
         <result column="job_demand" jdbcType="VARCHAR" property="jobDemand"/>

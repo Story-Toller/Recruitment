@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import tk.mybatis.mapper.entity.Example;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
@@ -23,6 +24,7 @@ public class CustomerServiceImpl implements CustomerService {
 
     @Autowired
     CustomerMapper customerMapper;
+    SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
 
     @Transactional
     public ResultVo customerResgit(String email, String password, String name) {
@@ -39,7 +41,7 @@ public class CustomerServiceImpl implements CustomerService {
                 customer1.setCustName(name);
                 customer1.setCustEmail(email);
                 customer1.setCustPassword(md5pwd);
-                customer1.setCustRegistTime(new Date());
+                customer1.setCustRegistTime(s.format(new Date()));
                 int i = customerMapper.insert(customer1);
                 if (i > 0) {
                     return new ResultVo(ResStatus.OK, "注册成功", null);

@@ -11,7 +11,7 @@
     <result column="company_admin_telno" jdbcType="BIGINT" property="companyAdminTelno" />
     <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail" />
     <result column="company_admin_password" jdbcType="VARCHAR" property="companyAdminPassword" />
-    <result column="company_admin_create_time" jdbcType="TIMESTAMP" property="companyAdminCreateTime" />
+    <result column="company_admin_create_time" jdbcType="VARCHAR" property="companyAdminCreateTime" />
     <result column="company_admin_position" jdbcType="INTEGER" property="companyAdminPosition" />
     <result column="company_admin_img" jdbcType="INTEGER" property="companyAdminImg" />
     <result column="status" jdbcType="INTEGER" property="status" />
