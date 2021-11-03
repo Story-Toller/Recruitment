@@ -23,4 +23,14 @@
             other2=#{other2}
         where cust_id = #{cusId}
     </update>
+    <update id="DataIsVisible">
+        UPDATE customer
+        set status=1
+        WHERE cust_id = #{custId}
+    </update>
+    <update id="DataIsNotVisible">
+        UPDATE customer
+        set status=0
+        WHERE cust_id = #{custId}
+    </update>
 </mapper>

@@ -16,4 +16,8 @@ public interface CustomerService {
                              String cusPhone, String cusEmail,
                              String other2);
 
+    //设置用户资料可见
+    ResultVo DataIsVisible(Integer custId);
+    //设置用户资料不可见
+    ResultVo DataIsNotVisible(Integer custId);
 }

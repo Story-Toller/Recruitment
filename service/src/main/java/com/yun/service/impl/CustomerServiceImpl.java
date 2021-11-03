@@ -99,4 +99,24 @@ public class CustomerServiceImpl implements CustomerService {
             return new ResultVo(ResStatus.NO, "update failed", null);
         }
     }
+
+    @Override
+    public ResultVo DataIsVisible(Integer custId) {
+        int i = customerMapper.DataIsVisible(custId);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
+    }
+
+    @Override
+    public ResultVo DataIsNotVisible(Integer custId) {
+        int i = customerMapper.DataIsNotVisible(custId);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
+    }
 }

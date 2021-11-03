@@ -63,4 +63,16 @@ public class CustomerController {
         return resultVo;
     }
 
+    @ApiOperation("设置用户资料可见/0 默认不可见/1 可见")
+    @PutMapping("/visible")
+    public ResultVo DataEvenVisible(Integer cusId) {
+        ResultVo resultVo = customerService.DataIsVisible(cusId);
+        return resultVo;
+    }
+    @ApiOperation("设置用户资料不不不可见/0 默认不可见/1 可见")
+    @PutMapping("/notVisible")
+    public ResultVo DataNotVisible(Integer cusId) {
+        ResultVo resultVo = customerService.DataIsNotVisible(cusId);
+        return resultVo;
+    }
 }
