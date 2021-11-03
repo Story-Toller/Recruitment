@@ -3,10 +3,9 @@ package com.yun.service.business;
 import com.yun.sysytem.vo.ResultVo;
 
 
-
 public interface ResumeService {
     //    基本信息录入
-    ResultVo bashInforInsert(Integer custId,String resumeName,
+    ResultVo bashInforInsert(Integer custId, String resumeName,
                              String resumeCreateTime, String resumeBirth, String resumeTelno,
                              String resumeEmail, String resumeGender, String resumeLeavingWorking,
                              String resumeLiveCity, String resumePersonid, String resumeIncome,
@@ -30,5 +29,11 @@ public interface ResumeService {
     ResultVo skillInsert(Integer resumeId, String skillName, String skillDesc);
 
     //    学历导入
-    ResultVo educationInsert(Integer resumeId,String eduLevel,String eduName,String eduStart,String eduStop,String eduPro);
+    ResultVo educationInsert(Integer resumeId, String eduLevel, String eduName, String eduStart, String eduStop, String eduPro);
+
+    //    设置简历可见
+    ResultVo ResumeVisible(Integer resmeId);
+
+    //    设置简历不可见
+    ResultVo ResumeNotVisible(Integer resumeId);
 }

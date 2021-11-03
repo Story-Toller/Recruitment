@@ -21,20 +21,6 @@ public class ResumeController {
     ResumeService resumeService;
 
     @ApiOperation("添加简历基本信息接口")
-//    @ApiImplicitParams({
-//            @ApiImplicitParam(dataType = "Integer", name = "custId", value = "用户id", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "reusmeRealName", value = "简历中用户名字", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeBirth", value = "简历中用户生日", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeTelno", value = "简历中用户电话", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeEmail", value = "简历中用户邮箱", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeGender", value = "简历中用户性别", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeLeavingWorking", value = "简历中用户职位状态", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeLiveCity", value = "简历中用户居住地", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumePersonid", value = "简历中用户应聘职位", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeIncome", value = "简历中用户期望月收入", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "resumeFullPartTime", value = "简历中用户应聘职位类别", required = true),
-//            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true),
-//    })
     @PostMapping("/bashIns")
     public ResultVo bashInfor(@RequestBody Resume resume, @RequestHeader("token") String token) {
         ResultVo resultVo = resumeService.bashInforInsert(resume.getCustId(), resume.getResumeName(),
@@ -134,6 +120,21 @@ public class ResumeController {
         ResultVo resultVo = resumeService.educationInsert(education.getResumeId(),
                 education.getEduLevel(), education.getEduName(), education.getEduStart(), education.getEduStop(),
                 education.getEduPro());
+        return resultVo;
+    }
+
+    @ApiOperation("设置简历不可见")
+    @PostMapping("/notVisible")
+    public ResultVo ResumeNotVisible(Integer resumeId, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.ResumeNotVisible(resumeId);
+        return resultVo;
+    }
+
+
+    @ApiOperation("设置简历可见")
+    @PostMapping("/visible")
+    public ResultVo ResumeVisible(Integer resumeId, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.ResumeVisible(resumeId);
         return resultVo;
     }
 }

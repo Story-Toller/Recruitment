@@ -139,5 +139,25 @@ public class ResumeServiceImpl implements ResumeService {
         return resultVo;
     }
 
+    @Override
+    public ResultVo ResumeVisible(Integer resmeId) {
+        int i = resumeMapper.ResumeVisible(resmeId);
+        if (i != 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", i);
+        }
+    }
+
+    @Override
+    public ResultVo ResumeNotVisible(Integer resumeId) {
+        int i = resumeMapper.ResumeNotVisible(resumeId);
+        if (i != 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", i);
+        }
+    }
+
 
 }
