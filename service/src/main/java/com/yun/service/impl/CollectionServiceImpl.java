@@ -42,10 +42,27 @@ public class CollectionServiceImpl implements Collectionservice {
             } else {
                 return new ResultVo(ResStatus.NO, "failed", null);
             }
-        }else {
+        } else {
             return new ResultVo(ResStatus.CANNOTCOLL, "请勿二次收藏", null);
         }
 
+    }
+
+    @Override
+    public ResultVo collection(Integer custId, Integer jobId) {
+        List<CustomerCollection> collection = customerCollectionMapper.collection(custId, jobId);
+        if (collection.size() == 0) {
+            CustomerCollection customerCollection = new CustomerCollection();
+            customerCollection.setCustId(custId);
+            customerCollection.setJobId(jobId);
+            customerCollection.setCollectionTime(s.format(new Date()));
+            int insert = customerCollectionMapper.insert(customerCollection);
+            ResultVo resultVo = new ResultVo(ResStatus.OK, "success", insert);
+            return resultVo;
+        } else {
+            ResultVo resultVo = new ResultVo(ResStatus.NO, "failed", null);
+            return resultVo;
+        }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)

@@ -5,28 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="92de15ad-e6d4-4d2d-9e23-ba1e49f246cc" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/DeliverResumeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/Education.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/vo/DeliverJobVo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/EducationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/EducationMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/DeliverResumeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/DeliverResumeServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85872ef7-ad41-437f-b6c7-2fad475640bf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources/85872ef7-ad41-437f-b6c7-2fad475640bf/storage_v2/_src_/schema/information_schema.FNRwLQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ResumeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/ShowResumeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CollectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/main/java/com/yun/controller/CollectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/api/src/test/java/com/yun/ApiApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/ResumeDeliveryRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/ResumeDeliveryRecord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/yun/sysytem/vo/ResStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/yun/sysytem/vo/ResStatus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/ResumeDeliveryRecordMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/ResumeDeliveryRecordMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/genetator/generatorConfig.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/genetator/generatorConfig.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/ResumeDeliveryRecordMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/ResumeDeliveryRecordMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ResumeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/ShowResumeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/CustomerCollection.java" beforeDir="false" afterPath="$PROJECT_DIR$/beans/src/main/java/com/yun/beans/entity/CustomerCollection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/CustomerCollectionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/java/com/yun/dao/mapper/CustomerCollectionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CustomerCollectionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/mapper/src/main/resources/mappers/CustomerCollectionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/Collectionservice.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/business/Collectionservice.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CollectionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/CollectionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ResumeServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/main/java/com/yun/service/impl/ShowResumeServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +84,7 @@
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Recruiter" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -129,6 +118,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.ApiApplication">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ApiApplicationTests.contextLoads11" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
@@ -145,7 +145,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ApiApplicationTests.contextLoads5" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ApiApplicationTests.contextLoads12" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="api" />
       <extension name="coverage">
         <pattern>
@@ -155,23 +155,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.yun" />
       <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads5" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ApiApplicationTests.contextLoads7" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="api" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.yun.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.yun" />
-      <option name="MAIN_CLASS_NAME" value="com.yun.ApiApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads7" />
+      <option name="METHOD_NAME" value="contextLoads12" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,20 +201,18 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
-      <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
       <item itemvalue="JUnit.ApiApplicationTests.contextLoads11" />
       <item itemvalue="Spring Boot.ApiApplication" />
+      <item itemvalue="JUnit.ApiApplicationTests.contextLoads12" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ApiApplicationTests.contextLoads12" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads11" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads9" />
         <item itemvalue="JUnit.ApiApplicationTests.contextLoads8" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads7" />
-        <item itemvalue="JUnit.ApiApplicationTests.contextLoads5" />
       </list>
     </recent_temporary>
   </component>
@@ -289,7 +271,15 @@
       <workItem from="1635387741229" duration="12911000" />
       <workItem from="1635470470295" duration="10825000" />
       <workItem from="1635728943575" duration="615000" />
-      <workItem from="1635738357122" duration="25000" />
+      <workItem from="1635738357122" duration="1762000" />
+      <workItem from="1635747221929" duration="4717000" />
+      <workItem from="1635756116788" duration="47000" />
+      <workItem from="1635817458010" duration="31000" />
+      <workItem from="1635817903842" duration="7241000" />
+      <workItem from="1635909109916" duration="3603000" />
+      <workItem from="1635919827867" duration="5808000" />
+      <workItem from="1635990368857" duration="7792000" />
+      <workItem from="1636006672181" duration="7578000" />
     </task>
     <task id="LOCAL-00001" summary="整合项目架构">
       <created>1632637021522</created>
@@ -508,7 +498,49 @@
       <option name="project" value="LOCAL" />
       <updated>1635392686847</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="简历模块加入学历模块">
+      <created>1635738615271</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1635738615271</updated>
+    </task>
+    <task id="LOCAL-00033" summary="添加设置用户资料是否可见接口">
+      <created>1635910605634</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1635910605634</updated>
+    </task>
+    <task id="LOCAL-00034" summary="设置个人简历是否可见">
+      <created>1635923003001</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1635923003001</updated>
+    </task>
+    <task id="LOCAL-00035" summary="优化时间显示">
+      <created>1635929203208</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1635929203208</updated>
+    </task>
+    <task id="LOCAL-00036" summary="修改个人信息">
+      <created>1636005470267</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1636005470267</updated>
+    </task>
+    <task id="LOCAL-00037" summary="增加密码修改">
+      <created>1636011773520</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1636011773520</updated>
+    </task>
+    <option name="localTasksCounter" value="38" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -527,12 +559,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="整合tkmapper，完成dao层接口，实体类，mapper.xml自动注入" />
-    <MESSAGE value="mapper接口统一加入@Mapper注解" />
-    <MESSAGE value="新增招聘者登陆注册接口" />
-    <MESSAGE value="备用字段投入使用，customer表other1改为用户头像" />
-    <MESSAGE value="整合jwt，完成token验证以及拦截器的使用&#10;前端登录时收到token，之后资源受限页面都需token验证&#10;主页实现显示用户名和头像功能" />
-    <MESSAGE value="完成主页职位显示功能，更改了job表status字段的属性" />
     <MESSAGE value="支持显示全职工作与兼职工作" />
     <MESSAGE value="other1更改为职位状态，other2更改为职位类别" />
     <MESSAGE value="提供行政和技术职位列表的接口" />
@@ -552,7 +578,13 @@
     <MESSAGE value="提供了创建简历的接口" />
     <MESSAGE value="新增我的页面基本信息展示以及简历展示的接口" />
     <MESSAGE value="细节调整" />
-    <option name="LAST_COMMIT_MESSAGE" value="细节调整" />
+    <MESSAGE value="简历模块加入学历模块" />
+    <MESSAGE value="添加设置用户资料是否可见接口" />
+    <MESSAGE value="设置个人简历是否可见" />
+    <MESSAGE value="优化时间显示" />
+    <MESSAGE value="修改个人信息" />
+    <MESSAGE value="增加密码修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="增加密码修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -565,6 +597,6 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/Recruitment$ApiApplication.ic" NAME="ApiApplication Coverage Results" MODIFIED="1634606884109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/Recruitment$ApiApplication.ic" NAME="ApiApplication Coverage Results" MODIFIED="1635831917513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -25,14 +25,14 @@ public class CollectionController {
     @PostMapping("/col_job")
     @ApiOperation("收藏职位的接口")
     public ResultVo addCollectionJob(@RequestBody CustomerCollection customerCollection, @RequestHeader("token") String token){
-        ResultVo resultVo = collectionservice.addCollection(customerCollection);
+        ResultVo resultVo = collectionservice.collection(customerCollection.getCustId(), customerCollection.getJobId());
         return resultVo;
     }
 
     @GetMapping("/showcol")
     @ApiOperation("展示职位收藏列表的接口")
     @ApiImplicitParam(dataType = "Integer", name = "custId", value = "职位收藏者ID", required = true)
-    public ResultVo showCollectionById(Integer custId,@RequestHeader("token")String token){
+    public ResultVo showCollectionById( Integer custId,@RequestHeader("token")String token){
             ResultVo resultVo = collectionservice.showCollectionByCusId(custId);
             ResultVo resultVo1 = new ResultVo(ResStatus.OK, "success", resultVo);
             return resultVo1;

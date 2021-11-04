@@ -10,6 +10,8 @@ import com.yun.dao.mapper.CompanyMapper;
 import com.yun.dao.mapper.CustomerCollectionMapper;
 import com.yun.dao.mapper.JobMapper;
 import com.yun.dao.mapper.ResumeDeliveryRecordMapper;
+import com.yun.service.business.Collectionservice;
+import com.yun.service.business.CustomerCenterService;
 import com.yun.service.business.ResumeService;
 import com.yun.sysytem.vo.ResultVo;
 import org.junit.jupiter.api.Test;
@@ -35,6 +37,8 @@ class ApiApplicationTests {
     ResumeService resumeService;
     @Autowired
     ResumeDeliveryRecordMapper resumeDeliveryRecordMapper;
+    @Autowired
+    Collectionservice collectionservice;
 
 
     @Test
@@ -143,6 +147,14 @@ class ApiApplicationTests {
         List<DeliverJobVo> deliverJobVos = resumeDeliveryRecordMapper.showDeliverJob(id);
         System.out.println(deliverJobVos);
 //        resumeService.honorInsert()
+    }
+
+    @Test
+    void contextLoads12() {
+        int custId=26;
+        int jobId=2;
+        ResultVo collection = collectionservice.collection(custId, jobId);
+        System.out.println(collection);
     }
 }
 

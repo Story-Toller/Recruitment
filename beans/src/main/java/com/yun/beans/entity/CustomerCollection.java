@@ -16,7 +16,7 @@ public class CustomerCollection {
      * 职位信息id
      */
     @Column(name = "job_id")
-    private String jobId;
+    private Integer jobId;
 
     /**
      * 用户id
@@ -53,16 +53,11 @@ public class CustomerCollection {
      *
      * @return job_id - 职位信息id
      */
-    public String getJobId() {
+    public Integer getJobId() {
         return jobId;
     }
 
-    /**
-     * 设置职位信息id
-     *
-     * @param jobId 职位信息id
-     */
-    public void setJobId(String jobId) {
+    public void setJobId(Integer jobId) {
         this.jobId = jobId;
     }
 

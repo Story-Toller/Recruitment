@@ -6,7 +6,7 @@
           WARNING - @mbg.generated
         -->
         <id column="collection_id" jdbcType="INTEGER" property="collectionId"/>
-        <result column="job_id" jdbcType="VARCHAR" property="jobId"/>
+        <result column="job_id" jdbcType="INTEGER" property="jobId"/>
         <result column="cust_id" jdbcType="INTEGER" property="custId"/>
         <result column="collection_time" jdbcType="VARCHAR" property="collectionTime"/>
     </resultMap>
@@ -42,5 +42,14 @@
                  INNER JOIN company p
                             on c.job_id = j.job_id and p.company_id = j.company_id
         where cust_id = #{custId}
+    </select>
+    <select id="collection" resultMap="BaseResultMap">
+        SELECT collection_id,
+               collection_time,
+               cust_id,
+               job_id
+        from customer_collection
+        where cust_id = #{custId}
+          and job_id = #{jobId}
     </select>
 </mapper>
