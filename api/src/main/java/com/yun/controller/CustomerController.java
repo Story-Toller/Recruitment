@@ -45,34 +45,73 @@ public class CustomerController {
     }
 
 
-    @ApiOperation("用户修改基本信息接口")
+    @ApiOperation("用户修改用户名")
     @ApiImplicitParams({
-            @ApiImplicitParam(dataType = "String", name = "cusEmail", value = "应聘者邮箱", required = true),
-            @ApiImplicitParam(dataType = "String", name = "cusPhone", value = "应聘者手机号", required = true),
-            @ApiImplicitParam(dataType = "String", name = "cusName", value = "应聘者用户名", required = true),
-            @ApiImplicitParam(dataType = "String", name = "other2", value = "应聘者性别", required = true),
-            @ApiImplicitParam(dataType = "String", name = "cusId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custName", value = "应聘者用户名", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custId", value = "应聘者id", required = true),
             @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
 
     })
-    @PutMapping("/updateCusInf/{cusId}/{cusName}/{cusPhone}/{cusEmail}/{other2}")
-    public ResultVo updateCusInfor(@PathVariable("cusId") int cusId, @PathVariable("cusName") String cusName,
-                                   @PathVariable("cusPhone") String cusPhone, @PathVariable("cusEmail") String cusEmail,
-                                   @PathVariable("other2") String other2, @RequestHeader("token") String token) {
-        ResultVo resultVo = customerService.updateBashInfor(cusId, cusName, cusPhone, cusEmail, other2);
+    @PutMapping("/updateCusInf/{custId}/{custName}")
+    public ResultVo updateCusInfor(@PathVariable("custId") Integer custId, @PathVariable("custName") String custName,
+                                  @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updateBashInfor(custId, custName);
+        return resultVo;
+    }
+
+    @ApiOperation("用户修改邮箱")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "custEmail", value = "应聘者邮箱", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
+
+    })
+    @PutMapping("/updateEmail/{custId}/{custEmail}")
+    public ResultVo updateEmail(@PathVariable("custId") Integer custId, @PathVariable("custEmail") String custEmail,
+                                   @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updateEmail(custId, custEmail);
+        return resultVo;
+    }
+
+    @ApiOperation("用户修改手机号")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "custTelno", value = "应聘者手机号", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
+
+    })
+    @PutMapping("/updatePhone/{custId}/{custTelno}")
+    public ResultVo updatePhone(@PathVariable("custId") Integer custId, @PathVariable("custTelno") String custTelno,
+                                @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updatePhone(custId, custTelno);
+        return resultVo;
+    }
+
+    @ApiOperation("用户修改性别")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "other2", value = "应聘者性别2", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
+
+    })
+    @PutMapping("/updateSex/{custId}/{other2}")
+    public ResultVo updateSex(@PathVariable("custId") Integer custId, @PathVariable("other2") String other2,
+                                @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updateSex(custId, other2);
         return resultVo;
     }
 
     @ApiOperation("设置用户资料可见/0 默认不可见/1 可见")
-    @PutMapping("/visible")
-    public ResultVo DataEvenVisible(Integer cusId) {
-        ResultVo resultVo = customerService.DataIsVisible(cusId);
+    @PutMapping("/visible/{custId}")
+    public ResultVo DataEvenVisible(@PathVariable("custId") Integer custId, @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.DataIsVisible(custId);
         return resultVo;
     }
+
     @ApiOperation("设置用户资料不不不可见/0 默认不可见/1 可见")
-    @PutMapping("/notVisible")
-    public ResultVo DataNotVisible(Integer cusId) {
-        ResultVo resultVo = customerService.DataIsNotVisible(cusId);
+    @PutMapping("/notVisible/{custId}")
+    public ResultVo DataNotVisible(@PathVariable("custId") Integer custId, @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.DataIsNotVisible(custId);
         return resultVo;
     }
 }

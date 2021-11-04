@@ -91,12 +91,40 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public ResultVo updateBashInfor(int cusId, String cusName,
-                                    String cusPhone, String cusEmail,
-                                    String other2) {
-        int i = customerMapper.updateBashInfroByCusId(cusId, cusName, cusPhone, cusEmail, other2);
+    public ResultVo updateBashInfor(Integer custId, String custName) {
+        int i = customerMapper.updateBashInfroByCusId(custId, custName);
         if (i > 0) {
-            return new ResultVo(ResStatus.OK, "update success", null);
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
+    }
+
+    @Override
+    public ResultVo updatePhone(Integer custId, String custTelno) {
+        int i = customerMapper.updatePhone(custId, custTelno);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
+    }
+
+    @Override
+    public ResultVo updateEmail(Integer custId, String custEmail) {
+        int i = customerMapper.updateEmail(custId, custEmail);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
+        } else {
+            return new ResultVo(ResStatus.NO, "update failed", null);
+        }
+    }
+
+    @Override
+    public ResultVo updateSex(Integer custId, String other2) {
+        int i = customerMapper.updateSex(custId, other2);
+        if (i > 0) {
+            return new ResultVo(ResStatus.OK, "update success", i);
         } else {
             return new ResultVo(ResStatus.NO, "update failed", null);
         }

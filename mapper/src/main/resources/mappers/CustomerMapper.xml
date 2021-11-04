@@ -17,11 +17,23 @@
     </resultMap>
     <update id="updateBashInfroByCusId">
         UPDATE customer
-        set cust_name=#{cusName},
-            cust_telno=#{cusPhone},
-            cust_email=#{cusEmail},
-            other2=#{other2}
-        where cust_id = #{cusId}
+        set cust_name=#{custName}
+        where cust_id = #{custId}
+    </update>
+    <update id="updateSex">
+        UPDATE customer
+        set other2=#{other2}
+        where cust_id = #{custId}
+    </update>
+    <update id="updateEmail">
+        UPDATE customer
+        set cust_email=#{custEmail}
+        where cust_id = #{custId}
+    </update>
+    <update id="updatePhone">
+        UPDATE customer
+        set cust_telno=#{custTelno}
+        where cust_id = #{custId}
     </update>
     <update id="DataIsVisible">
         UPDATE customer

@@ -8,11 +8,21 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface CustomerMapper extends FamilyMapper<Customer> {
-    int updateBashInfroByCusId(@Param("cusId") int cusId, @Param("cusName") String cusName,
-                               @Param("cusPhone") String cusPhone, @Param("cusEmail") String cusEmail,
-                               @Param("other2") String other2);
-//设置用户资料可见
-    int DataIsVisible (Integer custId);
+    //    修改昵称
+    int updateBashInfroByCusId(@Param("custId") Integer custId, @Param("custName") String custName);
+
+    //修改手机号
+    int updatePhone(@Param("custId") Integer custId, @Param("custTelno") String custTelno);
+
+    //    修改邮箱
+    int updateEmail(@Param("custId") Integer custId, @Param("custEmail") String custEmail);
+
+    //    修改性别
+    int updateSex(@Param("custId") Integer custId, @Param("other2") String other2);
+
+    //设置用户资料可见
+    int DataIsVisible(Integer custId);
+
     //设置用户资料不可见
-    int DataIsNotVisible (Integer custId);
+    int DataIsNotVisible(Integer custId);
 }

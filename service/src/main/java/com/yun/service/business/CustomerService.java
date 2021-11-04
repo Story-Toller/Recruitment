@@ -12,12 +12,21 @@ public interface CustomerService {
     //    用户登录
     ResultVo checkLogin(String email, String password);
 
-    ResultVo updateBashInfor(int cusId, String cusName,
-                             String cusPhone, String cusEmail,
-                             String other2);
+    //修改用户名
+    ResultVo updateBashInfor(Integer custId, String custName);
+
+    //修改手机号
+    ResultVo updatePhone(Integer custId, String custTelno);
+
+    //修改邮箱
+    ResultVo updateEmail(Integer custId, String custEmail);
+
+    //修改性别
+    ResultVo updateSex(Integer custId, String other2);
 
     //设置用户资料可见
     ResultVo DataIsVisible(Integer custId);
+
     //设置用户资料不可见
     ResultVo DataIsNotVisible(Integer custId);
 }
