@@ -1,5 +1,6 @@
 package com.yun.service.business;
 
+import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import org.apache.ibatis.annotations.Param;
 
@@ -14,6 +15,9 @@ public interface CustomerService {
 
     //修改用户名
     ResultVo updateBashInfor(Integer custId, String custName);
+
+    //    修改密码
+    ResultVo updatePsaaword(Integer custId, String custPassword,String pwd);
 
     //修改手机号
     ResultVo updatePhone(Integer custId, String custTelno);

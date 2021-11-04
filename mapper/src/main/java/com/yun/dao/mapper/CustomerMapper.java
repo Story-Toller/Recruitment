@@ -20,6 +20,9 @@ public interface CustomerMapper extends FamilyMapper<Customer> {
     //    修改性别
     int updateSex(@Param("custId") Integer custId, @Param("other2") String other2);
 
+    //    修改密码
+    int updatePassword(@Param("custId") Integer custId, @Param("custPassword") String custPassword);
+
     //设置用户资料可见
     int DataIsVisible(Integer custId);
 

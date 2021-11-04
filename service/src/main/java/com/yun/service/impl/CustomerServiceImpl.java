@@ -101,6 +101,29 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public ResultVo updatePsaaword(Integer custId, String custPassword, String pwd) {
+        Example example = new Example(Customer.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("custId", custId);
+        List<Customer> customers = customerMapper.selectByExample(example);
+        String s = MD5Utils.md5(pwd);
+        if (s.equals(customers.get(0).getCustPassword())) {
+            String s1 = MD5Utils.md5(custPassword);
+            int i = customerMapper.updatePassword(custId, s1);
+            if (i != 0) {
+                ResultVo resultVo = new ResultVo(ResStatus.OK, "success", i);
+                return resultVo;
+            } else {
+                ResultVo resultVo = new ResultVo(ResStatus.LOGIN_TIMEOUT, "登陆过期", null);
+                return resultVo;
+            }
+        } else {
+            ResultVo resultVo = new ResultVo(ResStatus.ERROR_PASSWORD, "原密码错误", null);
+            return resultVo;
+        }
+    }
+
+    @Override
     public ResultVo updatePhone(Integer custId, String custTelno) {
         int i = customerMapper.updatePhone(custId, custTelno);
         if (i > 0) {

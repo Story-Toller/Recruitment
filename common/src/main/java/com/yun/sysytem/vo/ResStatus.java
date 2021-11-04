@@ -11,6 +11,8 @@ public class ResStatus {
     public static final int LOGIN_WRONGFUL = 10004;
     //    过度收藏
     public static final int CANNOTCOLL = 10005;
+    //    密码错误
+    public static final int ERROR_PASSWORD = 10006;
 }
 
 

@@ -54,7 +54,7 @@ public class CustomerController {
     })
     @PutMapping("/updateCusInf/{custId}/{custName}")
     public ResultVo updateCusInfor(@PathVariable("custId") Integer custId, @PathVariable("custName") String custName,
-                                  @RequestHeader("token") String token) {
+                                   @RequestHeader("token") String token) {
         ResultVo resultVo = customerService.updateBashInfor(custId, custName);
         return resultVo;
     }
@@ -68,7 +68,7 @@ public class CustomerController {
     })
     @PutMapping("/updateEmail/{custId}/{custEmail}")
     public ResultVo updateEmail(@PathVariable("custId") Integer custId, @PathVariable("custEmail") String custEmail,
-                                   @RequestHeader("token") String token) {
+                                @RequestHeader("token") String token) {
         ResultVo resultVo = customerService.updateEmail(custId, custEmail);
         return resultVo;
     }
@@ -96,7 +96,7 @@ public class CustomerController {
     })
     @PutMapping("/updateSex/{custId}/{other2}")
     public ResultVo updateSex(@PathVariable("custId") Integer custId, @PathVariable("other2") String other2,
-                                @RequestHeader("token") String token) {
+                              @RequestHeader("token") String token) {
         ResultVo resultVo = customerService.updateSex(custId, other2);
         return resultVo;
     }
@@ -112,6 +112,21 @@ public class CustomerController {
     @PutMapping("/notVisible/{custId}")
     public ResultVo DataNotVisible(@PathVariable("custId") Integer custId, @RequestHeader("token") String token) {
         ResultVo resultVo = customerService.DataIsNotVisible(custId);
+        return resultVo;
+    }
+
+    @ApiOperation("更改用户密码")
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "custId", value = "应聘者id", required = true),
+            @ApiImplicitParam(dataType = "String", name = "custPassword", value = "更改后密码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "pwd", value = "原密码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "token", value = "token", required = true)
+
+    })
+    @PutMapping("/changepwd/{custId}/{custPassword}/{pwd}")
+    public ResultVo changePassword(@PathVariable("custId") Integer custId, @PathVariable("custPassword") String custPassword,
+                                   @PathVariable("pwd") String pwd, @RequestHeader("token") String token) {
+        ResultVo resultVo = customerService.updatePsaaword(custId, custPassword, pwd);
         return resultVo;
     }
 }

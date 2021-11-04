@@ -45,4 +45,9 @@
         set status=0
         WHERE cust_id = #{custId}
     </update>
+    <update id="updatePassword">
+        update customer
+        set cust_password=#{custPassword}
+        where cust_id = #{custId}
+    </update>
 </mapper>
