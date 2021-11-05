@@ -13,6 +13,8 @@ public class ResStatus {
     public static final int CANNOTCOLL = 10005;
     //    密码错误
     public static final int ERROR_PASSWORD = 10006;
+    //    需要简历
+    public static final int WITHOUTRESUME = 10007;
 }
 
 

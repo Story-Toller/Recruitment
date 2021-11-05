@@ -25,43 +25,24 @@ public class CollectionServiceImpl implements Collectionservice {
     SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
-    public ResultVo addCollection(CustomerCollection customerCollection) {
-        Example example = new Example(CustomerCollection.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("jobId", customerCollection.getJobId());
-        List<CustomerCollection> customerCollections = customerCollectionMapper.selectByExample(example);
-
-        if (customerCollections.size() == 0) {
-            customerCollection.setCollectionTime(s.format(new Date()));
-            int insert = customerCollectionMapper.insert(customerCollection);
-
-            if (insert > 0) {
-
-                return new ResultVo(ResStatus.OK, "success", null);
-
-            } else {
-                return new ResultVo(ResStatus.NO, "failed", null);
-            }
-        } else {
-            return new ResultVo(ResStatus.CANNOTCOLL, "请勿二次收藏", null);
-        }
-
-    }
-
-    @Override
     public ResultVo collection(Integer custId, Integer jobId) {
         List<CustomerCollection> collection = customerCollectionMapper.collection(custId, jobId);
-        if (collection.size() == 0) {
-            CustomerCollection customerCollection = new CustomerCollection();
-            customerCollection.setCustId(custId);
-            customerCollection.setJobId(jobId);
-            customerCollection.setCollectionTime(s.format(new Date()));
-            int insert = customerCollectionMapper.insert(customerCollection);
-            ResultVo resultVo = new ResultVo(ResStatus.OK, "success", insert);
+        if (custId == null) {
+            ResultVo resultVo = new ResultVo(ResStatus.LOGIN_TIMEOUT, "请先登录", null);
             return resultVo;
         } else {
-            ResultVo resultVo = new ResultVo(ResStatus.NO, "failed", null);
-            return resultVo;
+            if (collection.size() == 0) {
+                CustomerCollection customerCollection = new CustomerCollection();
+                customerCollection.setCustId(custId);
+                customerCollection.setJobId(jobId);
+                customerCollection.setCollectionTime(s.format(new Date()));
+                int insert = customerCollectionMapper.insert(customerCollection);
+                ResultVo resultVo = new ResultVo(ResStatus.OK, "收藏成功", insert);
+                return resultVo;
+            } else {
+                ResultVo resultVo = new ResultVo(ResStatus.CANNOTCOLL, "请勿重复收藏", null);
+                return resultVo;
+            }
         }
     }
 

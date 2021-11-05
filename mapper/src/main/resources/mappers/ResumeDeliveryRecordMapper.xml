@@ -44,4 +44,18 @@
                             on r.job_id = j.job_id and j.company_id = c.company_id
         where cust_id = #{custId}
     </select>
+    <select id="PreventDuplication" resultMap="BaseResultMap">
+        SELECT resume_delivery_record_id,
+               job_id,
+               cust_id,
+               delivery_time,
+               resume_id,
+               delivery_status,
+               other1,
+               other2
+        from resume_delivery_record
+        where cust_id = #{custId}
+          and job_id = #{jobId}
+          and resume_id = #{resumeId}
+    </select>
 </mapper>

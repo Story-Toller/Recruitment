@@ -22,14 +22,32 @@ public class DeliverResumeServiceImpl implements DeliverResumeService {
     SimpleDateFormat s = new SimpleDateFormat("yyyy-MM-dd");
 
     @Override
-    public ResultVo deliverResume(ResumeDeliveryRecord resumeDeliveryRecord) {
-        resumeDeliveryRecord.setDeliveryTime(s.format(new Date()));
-        int insert = resumeDeliveryRecordMapper.insert(resumeDeliveryRecord);
-        if (insert>0){
-            return new ResultVo(ResStatus.OK,"success",null);
-        }else {
-            return new ResultVo(ResStatus.NO,"failed",null);
+    public ResultVo deliverResume(Integer custId, Integer jobId, Integer resumeId) {
+        List<ResumeDeliveryRecord> resumeDeliveryRecords = resumeDeliveryRecordMapper.PreventDuplication(custId, jobId, resumeId);
+        if (custId == null) {
+            ResultVo resultVo = new ResultVo(ResStatus.LOGIN_TIMEOUT, "请先登录吧", null);
+            return resultVo;
+        } else {
+            if (resumeId == null) {
+                ResultVo resultVo = new ResultVo(ResStatus.WITHOUTRESUME, "请先选择简历", null);
+                return resultVo;
+            } else {
+                if (resumeDeliveryRecords.size() == 0) {
+                    ResumeDeliveryRecord resumeDeliveryRecord = new ResumeDeliveryRecord();
+                    resumeDeliveryRecord.setCustId(custId);
+                    resumeDeliveryRecord.setResumeId(resumeId);
+                    resumeDeliveryRecord.setJobId(jobId);
+                    resumeDeliveryRecord.setDeliveryTime(s.format(new Date()));
+                    int insert = resumeDeliveryRecordMapper.insert(resumeDeliveryRecord);
+                    ResultVo resultVo = new ResultVo(ResStatus.OK, "投递成功", insert);
+                    return resultVo;
+                } else {
+                    ResultVo resultVo = new ResultVo(ResStatus.NO, "请勿重复投递", null);
+                    return resultVo;
+                }
+            }
         }
+
     }
 
     @Override

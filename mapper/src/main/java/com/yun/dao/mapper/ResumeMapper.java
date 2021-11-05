@@ -4,6 +4,8 @@ import com.yun.beans.entity.Resume;
 import com.yun.dao.tk.FamilyMapper;
 import org.apache.ibatis.annotations.Mapper;
 
+import java.util.List;
+
 @Mapper
 public interface ResumeMapper extends FamilyMapper<Resume> {
     //    设置用户简历可见

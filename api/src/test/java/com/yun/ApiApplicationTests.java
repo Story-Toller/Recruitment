@@ -3,6 +3,7 @@ package com.yun;
 import com.yun.beans.entity.Company;
 import com.yun.beans.entity.CustomerCollection;
 import com.yun.beans.entity.JobVo;
+import com.yun.beans.entity.ResumeDeliveryRecord;
 import com.yun.beans.vo.DeliverJobVo;
 import com.yun.beans.vo.JobCollectionVo;
 import com.yun.beans.vo.JobDesVo;
@@ -155,6 +156,15 @@ class ApiApplicationTests {
         int jobId=2;
         ResultVo collection = collectionservice.collection(custId, jobId);
         System.out.println(collection);
+    }
+
+    @Test
+    void contextLoads13() {
+        int custId=26;
+        int jobId=2;
+        int resumeId=0;
+        List<ResumeDeliveryRecord> resumeDeliveryRecord = resumeDeliveryRecordMapper.PreventDuplication(custId, jobId, resumeId);
+        System.out.println(resumeDeliveryRecord);
     }
 }
 
