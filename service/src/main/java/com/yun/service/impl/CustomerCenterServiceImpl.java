@@ -29,14 +29,4 @@ public class CustomerCenterServiceImpl implements CustomerCenterService {
         ResultVo resultVo = new ResultVo(ResStatus.OK, "success", customers);
         return resultVo;
     }
-
-    @Transactional(propagation = Propagation.SUPPORTS)
-    public ResultVo customerResumeList(Integer custId) {
-        Example example = new Example(Resume.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("custId", custId);
-        List<Resume> resume = resumeMapper.selectByExample(example);
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", resume);
-        return resultVo;
-    }
 }

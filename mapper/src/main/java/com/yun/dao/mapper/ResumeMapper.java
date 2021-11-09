@@ -13,4 +13,7 @@ public interface ResumeMapper extends FamilyMapper<Resume> {
 
     //    设置用户简历不不不可见
     int ResumeNotVisible(Integer resumeId);
+
+    //    页面详情页显示拥有简历
+    List<Resume> showAllResumeHave(Integer custId);
 }

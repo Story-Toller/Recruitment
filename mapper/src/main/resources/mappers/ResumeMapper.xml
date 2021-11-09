@@ -34,4 +34,9 @@
         set status=0
         where resume_id = #{resumeId}
     </update>
+    <select id="showAllResumeHave" resultMap="BaseResultMap">
+        SELECT resume_id, resume_name, resume_create_time, resume_full_part_time
+        from resume
+        where cust_id = #{custId}
+    </select>
 </mapper>

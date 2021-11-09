@@ -36,4 +36,7 @@ public interface ResumeService {
 
     //    设置简历不可见
     ResultVo ResumeNotVisible(Integer resumeId);
+
+    //    页面详情页显示拥有简历
+    ResultVo showAllYouResume(Integer custId);
 }

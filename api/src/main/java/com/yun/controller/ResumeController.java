@@ -137,4 +137,11 @@ public class ResumeController {
         ResultVo resultVo = resumeService.ResumeVisible(resumeId);
         return resultVo;
     }
+
+    @ApiOperation("页面详情页显示拥有简历")
+    @GetMapping("/showAllRes")
+    public ResultVo ShowAllRes(Integer custId, @RequestHeader("token") String token) {
+        ResultVo resultVo = resumeService.showAllYouResume(custId);
+        return resultVo;
+    }
 }

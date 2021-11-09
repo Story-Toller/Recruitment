@@ -161,5 +161,17 @@ public class ResumeServiceImpl implements ResumeService {
         }
     }
 
+    @Override
+    public ResultVo showAllYouResume(Integer custId) {
+        if (custId == null) {
+            ResultVo resultVo = new ResultVo(ResStatus.NOT_LOGIN, "请先登录", null);
+            return resultVo;
+        } else {
+            List<Resume> resumes = resumeMapper.showAllResumeHave(custId);
+            ResultVo resultVos = new ResultVo(ResStatus.OK, "success", resumes);
+            return resultVos;
+        }
+    }
+
 
 }
