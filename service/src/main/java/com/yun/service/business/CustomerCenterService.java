@@ -6,4 +6,7 @@ import com.yun.sysytem.vo.ResultVo;
 public interface CustomerCenterService {
 //    用户基本信息展示
     ResultVo customerInformationList(Integer custId);
+
+//    用户简历信息展示
+    ResultVo customerResumeList(Integer custId);
 }

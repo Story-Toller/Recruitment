@@ -23,4 +23,11 @@ public class CustomerCenterController {
         ResultVo resultVo = customerCenterService.customerInformationList(custId);
         return resultVo;
     }
+
+    @GetMapping("/resumeList")
+    @ApiOperation("查询简历列表的接口")
+    public ResultVo ResumeList(Integer custId, @RequestHeader("token") String token) {
+        ResultVo resultVo = customerCenterService.customerResumeList(custId);
+        return resultVo;
+    }
 }
