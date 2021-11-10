@@ -7,6 +7,7 @@ import com.yun.beans.vo.JobCollectionVo;
 import com.yun.beans.vo.JobDesVo;
 import com.yun.dao.tk.FamilyMapper;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -47,5 +48,10 @@ public interface JobMapper extends FamilyMapper<Job> {
 
     //    职位详情显示
     List<JobDesVo> showJobDes(int jobId);
+
+    //    职位搜索
+    List<JobVo> selectByKeyWord(@Param("keyword") String keyword,
+                                @Param("start") int start,
+                                @Param("limit") int limit);
 
 }
