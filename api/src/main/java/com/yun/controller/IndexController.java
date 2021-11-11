@@ -39,5 +39,4 @@ public class IndexController {
         ResultVo resultVo = indexJobService.indexPartJob();
         return resultVo;
     }
-
 }

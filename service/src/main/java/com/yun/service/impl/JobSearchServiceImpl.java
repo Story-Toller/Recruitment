@@ -4,7 +4,7 @@ import com.yun.beans.entity.Job;
 import com.yun.beans.entity.JobVo;
 import com.yun.dao.mapper.JobMapper;
 import com.yun.service.business.JobSearchService;
-import com.yun.sysytem.vo.PageHelper;
+import com.yun.sysytem.utils.PageHelper;
 import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;

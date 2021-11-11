@@ -1,8 +1,9 @@
-package com.yun.sysytem.vo;
+package com.yun.sysytem.utils;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
 import java.util.List;
 
 @Data
