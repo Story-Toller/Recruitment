@@ -39,4 +39,15 @@
         from resume
         where cust_id = #{custId}
     </select>
+    <select id="selectNumberOfCanSeeResume" resultType="int">
+        select count(cust_id)
+        from resume
+        where cust_id = #{custId}
+          and status = 1
+    </select>
+    <select id="selectCustomerIdByResumeId" resultType="int">
+        SELECT cust_id
+        from resume
+        where resume_id = #{resumeId}
+    </select>
 </mapper>

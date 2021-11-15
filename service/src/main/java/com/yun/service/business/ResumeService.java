@@ -32,7 +32,7 @@ public interface ResumeService {
     ResultVo educationInsert(Integer resumeId, String eduLevel, String eduName, String eduStart, String eduStop, String eduPro);
 
     //    设置简历可见
-    ResultVo ResumeVisible(Integer resmeId);
+    ResultVo ResumeVisible(Integer resumeId);
 
     //    设置简历不可见
     ResultVo ResumeNotVisible(Integer resumeId);

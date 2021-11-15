@@ -8,6 +8,7 @@ import com.yun.sysytem.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
+import tk.mybatis.mapper.weekend.Weekend;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -60,6 +61,7 @@ public class ResumeServiceImpl implements ResumeService {
             resume.setResumeIncome(resumeIncome);
             resume.setResumePersonid(resumePersonid);
             resume.setResumeFullPartTime(resumeFullPartTime);
+            resume.setStatus(0);
             int insert = resumeMapper.insert(resume);
             ResultVo resultVo1 = new ResultVo(ResStatus.OK, "success", insert);
             return resultVo1;
@@ -142,22 +144,39 @@ public class ResumeServiceImpl implements ResumeService {
     }
 
     @Override
-    public ResultVo ResumeVisible(Integer resmeId) {
-        int i = resumeMapper.ResumeVisible(resmeId);
-        if (i != 0) {
-            return new ResultVo(ResStatus.OK, "update success", i);
+    public ResultVo ResumeVisible(Integer resumeId) {
+        int custId = resumeMapper.selectCustomerIdByResumeId(resumeId);
+        int canSeenumber = resumeMapper.selectNumberOfCanSeeResume(custId);
+        if (canSeenumber < 1) {
+            int i = resumeMapper.ResumeVisible(resumeId);
+            return new ResultVo(ResStatus.OK, "更改成功", i);
         } else {
-            return new ResultVo(ResStatus.NO, "update failed", i);
+            Example example = new Example(Resume.class);
+            Example.Criteria criteria = example.createCriteria();
+            criteria.andEqualTo("custId", custId);
+            int allNumber = resumeMapper.selectCountByExample(example);
+            int a = canSeenumber - 1;
+            return new ResultVo(ResStatus.NO, "您的简历总数为" + allNumber + "个，最多可设置" + a + "条简历可见", null);
         }
     }
 
     @Override
     public ResultVo ResumeNotVisible(Integer resumeId) {
-        int i = resumeMapper.ResumeNotVisible(resumeId);
-        if (i != 0) {
-            return new ResultVo(ResStatus.OK, "update success", i);
+        int custId = resumeMapper.selectCustomerIdByResumeId(resumeId);
+        Example example = new Example(Resume.class);
+        Example.Criteria criteria = example.createCriteria();
+        criteria.andEqualTo("custId", custId);
+        int allNumber = resumeMapper.selectCountByExample(example);
+
+
+        int canSeenumber = resumeMapper.selectNumberOfCanSeeResume(custId);
+
+
+        if (canSeenumber <= 1) {
+            int i = resumeMapper.ResumeNotVisible(resumeId);
+            return new ResultVo(ResStatus.OK, allNumber+"份简历已设置全部不可见", i);
         } else {
-            return new ResultVo(ResStatus.NO, "update failed", i);
+            return new ResultVo(ResStatus.NO, "更改失败", null);
         }
     }
 
