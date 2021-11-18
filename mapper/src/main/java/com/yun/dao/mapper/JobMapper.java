@@ -54,4 +54,9 @@ public interface JobMapper extends FamilyMapper<Job> {
                                 @Param("start") int start,
                                 @Param("limit") int limit);
 
+
+    String selectJobName(Integer jobId);
+    String selectAdminName(Integer jobId);
+    String selectAdminEmail(Integer jobId);
+
 }

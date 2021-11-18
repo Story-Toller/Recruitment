@@ -6,4 +6,5 @@ import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface CompanyAdminMapper extends FamilyMapper<CompanyAdmin> {
+    String selectEmail(Integer companyAdminId);
 }

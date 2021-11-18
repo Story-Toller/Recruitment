@@ -1,21 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.yun.dao.mapper.CompanyAdminMapper">
-  <resultMap id="BaseResultMap" type="com.yun.beans.entity.CompanyAdmin">
-    <!--
-      WARNING - @mbg.generated
-    -->
-    <id column="company_admin_id" jdbcType="INTEGER" property="companyAdminId" />
-    <result column="company_id" jdbcType="INTEGER" property="companyId" />
-    <result column="company_admin_name" jdbcType="VARCHAR" property="companyAdminName" />
-    <result column="company_admin_telno" jdbcType="BIGINT" property="companyAdminTelno" />
-    <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail" />
-    <result column="company_admin_password" jdbcType="VARCHAR" property="companyAdminPassword" />
-    <result column="company_admin_create_time" jdbcType="VARCHAR" property="companyAdminCreateTime" />
-    <result column="company_admin_position" jdbcType="INTEGER" property="companyAdminPosition" />
-    <result column="company_admin_img" jdbcType="INTEGER" property="companyAdminImg" />
-    <result column="status" jdbcType="INTEGER" property="status" />
-    <result column="other1" jdbcType="VARCHAR" property="other1" />
-    <result column="other2" jdbcType="VARCHAR" property="other2" />
-  </resultMap>
+    <resultMap id="BaseResultMap" type="com.yun.beans.entity.CompanyAdmin">
+        <!--
+          WARNING - @mbg.generated
+        -->
+        <id column="company_admin_id" jdbcType="INTEGER" property="companyAdminId"/>
+        <result column="company_id" jdbcType="INTEGER" property="companyId"/>
+        <result column="company_admin_name" jdbcType="VARCHAR" property="companyAdminName"/>
+        <result column="company_admin_telno" jdbcType="BIGINT" property="companyAdminTelno"/>
+        <result column="company_admin_email" jdbcType="VARCHAR" property="companyAdminEmail"/>
+        <result column="company_admin_password" jdbcType="VARCHAR" property="companyAdminPassword"/>
+        <result column="company_admin_create_time" jdbcType="VARCHAR" property="companyAdminCreateTime"/>
+        <result column="company_admin_position" jdbcType="INTEGER" property="companyAdminPosition"/>
+        <result column="company_admin_img" jdbcType="INTEGER" property="companyAdminImg"/>
+        <result column="status" jdbcType="INTEGER" property="status"/>
+        <result column="other1" jdbcType="VARCHAR" property="other1"/>
+        <result column="other2" jdbcType="VARCHAR" property="other2"/>
+    </resultMap>
+    <select id="selectEmail" resultType="string">
+        select company_admin_email
+        from company_admin
+        where company_admin_id = #{companyAdminId}
+    </select>
 </mapper>

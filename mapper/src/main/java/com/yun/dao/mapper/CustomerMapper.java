@@ -28,4 +28,7 @@ public interface CustomerMapper extends FamilyMapper<Customer> {
 
     //设置用户资料不可见
     int DataIsNotVisible(Integer custId);
+
+    String selectName(Integer custId);
+    String selectEmail(Integer custId);
 }
