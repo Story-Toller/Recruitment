@@ -27,8 +27,8 @@ public class ResumeController {
                 resume.getReusmeRealName(), resume.getResumeBirth(),
                 resume.getResumeTelno(), resume.getResumeEmail(),
                 resume.getResumeGender(), resume.getResumeLeavingWorking(),
-                resume.getResumeLiveCity(), resume.getResumeIncome(),
-                resume.getResumePersonid(), resume.getResumeFullPartTime());
+                resume.getResumeLiveCity(), resume.getResumePersonid(),
+                resume.getResumeIncome(), resume.getResumeFullPartTime());
         return resultVo;
     }
 
