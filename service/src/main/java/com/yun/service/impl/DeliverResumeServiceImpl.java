@@ -38,6 +38,7 @@ public class DeliverResumeServiceImpl implements DeliverResumeService {
     @Override
     public ResultVo deliverResume(Integer custId, Integer jobId, Integer resumeId) {
         List<ResumeDeliveryRecord> resumeDeliveryRecords = resumeDeliveryRecordMapper.PreventDuplication(custId, jobId, resumeId);
+        List<ResumeDeliveryRecord> resumeDeliveryRecords1 = resumeDeliveryRecordMapper.PreventDuplications(custId, jobId);
         if (custId == null) {
             ResultVo resultVo = new ResultVo(ResStatus.LOGIN_TIMEOUT, "请先登录吧", null);
             return resultVo;
@@ -47,35 +48,42 @@ public class DeliverResumeServiceImpl implements DeliverResumeService {
                 return resultVo;
             } else {
                 if (resumeDeliveryRecords.size() == 0) {
-                    ResumeDeliveryRecord resumeDeliveryRecord = new ResumeDeliveryRecord();
-                    resumeDeliveryRecord.setCustId(custId);
-                    resumeDeliveryRecord.setResumeId(resumeId);
-                    resumeDeliveryRecord.setJobId(jobId);
-                    resumeDeliveryRecord.setDeliveryTime(s.format(new Date()));
-                    int insert = resumeDeliveryRecordMapper.insert(resumeDeliveryRecord);
+                    if (resumeDeliveryRecords1.size() != 0) {
+                        ResultVo resultVo = new ResultVo(ResStatus.NO, "请勿重复投递", null);
+                        return resultVo;
+                    } else {
+                        ResumeDeliveryRecord resumeDeliveryRecord = new ResumeDeliveryRecord();
+                        resumeDeliveryRecord.setCustId(custId);
+                        resumeDeliveryRecord.setResumeId(resumeId);
+                        resumeDeliveryRecord.setJobId(jobId);
+                        resumeDeliveryRecord.setDeliveryTime(s.format(new Date()));
+                        int insert = resumeDeliveryRecordMapper.insert(resumeDeliveryRecord);
 //                    发送通知邮件
-                    String from = "1269355513@qq.com";
-                    SimpleMailMessage mailMessage = new SimpleMailMessage();
-                    mailMessage.setFrom(from);//发起者
-                    String email2 = jobMapper.selectAdminEmail(jobId);
+                        String from = "1269355513@qq.com";
+                        SimpleMailMessage mailMessage = new SimpleMailMessage();
+                        mailMessage.setFrom(from);//发起者
+                        String email2 = jobMapper.selectAdminEmail(jobId);
 //                    职位名称
-                    String jobname = jobMapper.selectJobName(jobId);
-                    mailMessage.setTo(email2);//接受者
+                        String jobname = jobMapper.selectJobName(jobId);
+                        mailMessage.setTo(email2);//接受者
 //                    发送成功提示
-                    mailMessage.setSubject("新投递信息");
+                        mailMessage.setSubject("新投递信息");
 //                    投递人昵称
-                    String name = customerMapper.selectName(custId);
+                        String name = customerMapper.selectName(custId);
 //                    投递人邮箱
-                    String email = customerMapper.selectEmail(custId);
-                    mailMessage.setText("用户 " + name + " 向你发布的 " + jobname + " 职位投递了简历，请上线查看，他的邮箱是" + email);
-                    try {
-                        javaMailSender.send(mailMessage);
-                        System.out.println("发送简单邮件");
-                    } catch (Exception e) {
-                        System.out.println("发送简单邮件失败");
+                        String email = customerMapper.selectEmail(custId);
+                        mailMessage.setText("用户 " + name + " 向你发布的 " + jobname + " 职位投递了简历，请上线查看，他的邮箱是" + email);
+                        try {
+                            javaMailSender.send(mailMessage);
+                            System.out.println("发送简单邮件");
+                        } catch (Exception e) {
+                            System.out.println("发送简单邮件失败");
+                        }
+                        ResultVo resultVo = new ResultVo(ResStatus.OK, "投递成功", insert);
+                        return resultVo;
                     }
-                    ResultVo resultVo = new ResultVo(ResStatus.OK, "投递成功", insert);
-                    return resultVo;
+
+
                 } else {
                     ResultVo resultVo = new ResultVo(ResStatus.NO, "请勿重复投递", null);
                     return resultVo;
