@@ -7,6 +7,7 @@ import com.yun.dao.mapper.CustomerMapper;
 import com.yun.dao.mapper.JobMapper;
 import com.yun.dao.mapper.ResumeDeliveryRecordMapper;
 import com.yun.service.business.DeliverResumeService;
+import com.yun.sysytem.utils.PageHelper;
 import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -94,9 +95,13 @@ public class DeliverResumeServiceImpl implements DeliverResumeService {
     }
 
     @Override
-    public ResultVo showDeliverResume(Integer custId) {
-        List<DeliverJobVo> deliverJobVos = resumeDeliveryRecordMapper.showDeliverJob(custId);
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", deliverJobVos);
+    public ResultVo showDeliverResume(Integer custId, int pageNum, int limit) {
+        int start = (pageNum - 1) * limit;
+        List<DeliverJobVo> deliverJobVos = resumeDeliveryRecordMapper.showDeliverJob(custId, start, limit);
+        int jobs = deliverJobVos.size();
+        int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
+        PageHelper<DeliverJobVo> deliverJobVoPageHelper = new PageHelper<>(jobs, pageCount, deliverJobVos);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", deliverJobVoPageHelper);
         return resultVo;
     }
 }

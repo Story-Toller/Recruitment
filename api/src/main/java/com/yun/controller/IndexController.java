@@ -3,6 +3,8 @@ package com.yun.controller;
 import com.yun.service.business.IndexJobService;
 import com.yun.sysytem.vo.ResultVo;
 import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,22 +23,34 @@ public class IndexController {
 
     @GetMapping("/new-job")
     @ApiOperation("查询最新职位的接口")
-    public ResultVo showHotJob(){
-        ResultVo resultVo = indexJobService.showHotJob();
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "pageNum", value = "页码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "limit", value = "每页数量", required = true)
+    })
+    public ResultVo showHotJob(int pageNum, int limit){
+        ResultVo resultVo = indexJobService.showHotJob(pageNum, limit);
         return resultVo;
     }
 
     @GetMapping("/full-job")
     @ApiOperation("查询全职的接口")
-    public ResultVo showFullJob(){
-        ResultVo resultVo = indexJobService.indexFullJob();
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "pageNum", value = "页码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "limit", value = "每页数量", required = true)
+    })
+    public ResultVo showFullJob(int pageNum, int limit){
+        ResultVo resultVo = indexJobService.indexFullJob(pageNum, limit);
         return resultVo;
     }
 
     @GetMapping("/part-job")
     @ApiOperation("查询兼职的接口")
-    public ResultVo showPartJob(){
-        ResultVo resultVo = indexJobService.indexPartJob();
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "String", name = "pageNum", value = "页码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "limit", value = "每页数量", required = true)
+    })
+    public ResultVo showPartJob(int pageNum, int limit){
+        ResultVo resultVo = indexJobService.indexPartJob(pageNum, limit);
         return resultVo;
     }
 }

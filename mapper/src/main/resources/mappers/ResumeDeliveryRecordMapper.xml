@@ -42,7 +42,8 @@
                  INNER JOIN job j
                  INNER JOIN company c
                             on r.job_id = j.job_id and j.company_id = c.company_id
-        where cust_id = #{custId}
+        where cust_id = #{custId} limit #{start}
+            , #{limit}
     </select>
     <select id="PreventDuplication" resultMap="BaseResultMap">
         SELECT resume_delivery_record_id,

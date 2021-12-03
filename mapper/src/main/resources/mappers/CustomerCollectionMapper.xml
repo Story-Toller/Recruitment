@@ -41,7 +41,8 @@
                  INNER JOIN job j
                  INNER JOIN company p
                             on c.job_id = j.job_id and p.company_id = j.company_id
-        where cust_id = #{custId}
+        where cust_id = #{custId} limit #{start}
+            , #{limit}
     </select>
     <select id="collection" resultMap="BaseResultMap">
         SELECT collection_id,

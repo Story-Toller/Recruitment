@@ -14,13 +14,16 @@ import java.util.List;
 @Mapper
 public interface JobMapper extends FamilyMapper<Job> {
     //      首页展示最新发布职业
-    List<JobVo> indexShowJob();
+    List<JobVo> indexShowJob(@Param("start") int start,
+                             @Param("limit") int limit);
 
     //    首页展示全职工作
-    List<JobVo> indexFullJob();
+    List<JobVo> indexFullJob(@Param("start") int start,
+                             @Param("limit") int limit);
 
     //    首页展示兼职工作
-    List<JobVo> indexPartJob();
+    List<JobVo> indexPartJob(@Param("start") int start,
+                             @Param("limit") int limit);
 
     //        技术类职位展示
     List<JobVo> showTechnicalJob();

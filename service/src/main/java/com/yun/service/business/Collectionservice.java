@@ -7,5 +7,5 @@ public interface Collectionservice {
     //    收藏
     ResultVo collection(Integer custId, Integer jobId);
 
-    ResultVo showCollectionByCusId(Integer custId);
+    ResultVo showCollectionByCusId(Integer custId,int pageNum, int limit);
 }

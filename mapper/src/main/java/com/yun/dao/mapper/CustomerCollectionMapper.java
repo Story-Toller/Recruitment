@@ -13,8 +13,9 @@ import java.util.List;
 public interface CustomerCollectionMapper extends FamilyMapper<CustomerCollection> {
 
     //    收藏职位显示
-    List<JobCollectionVo> showJobCollection(Integer custId);
+    List<JobCollectionVo> showJobCollection(@Param("custId") Integer custId, @Param("start") int start,
+                                            @Param("limit") int limit);
 
-//    收藏职位
-    List<CustomerCollection> collection(@Param("custId") Integer custId, @Param("jobId")Integer jobId);
+    //    收藏职位
+    List<CustomerCollection> collection(@Param("custId") Integer custId, @Param("jobId") Integer jobId);
 }

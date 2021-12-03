@@ -3,10 +3,7 @@ package com.yun.controller;
 import com.yun.beans.entity.ResumeDeliveryRecord;
 import com.yun.service.business.DeliverResumeService;
 import com.yun.sysytem.vo.ResultVo;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ResponseHeader;
+import io.swagger.annotations.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,9 +25,13 @@ public class DeliverResumeController {
 
     @GetMapping("/showAll")
     @ApiOperation("展示投递简历的接口")
-    @ApiImplicitParam(dataType = "Integer", name = "custId", value = "职位收藏者ID", required = true)
-    public ResultVo showDeliverResume(Integer custId) {
-        ResultVo resultVo = deliverResumeService.showDeliverResume(custId);
+    @ApiImplicitParams({
+            @ApiImplicitParam(dataType = "Integer", name = "custId", value = "职位收藏者ID", required = true),
+            @ApiImplicitParam(dataType = "String", name = "pageNum", value = "页码", required = true),
+            @ApiImplicitParam(dataType = "String", name = "limit", value = "每页数量", required = true)
+    })
+    public ResultVo showDeliverResume(Integer custId, int pageNum, int limit) {
+        ResultVo resultVo = deliverResumeService.showDeliverResume(custId,pageNum,limit);
         return resultVo;
     }
 

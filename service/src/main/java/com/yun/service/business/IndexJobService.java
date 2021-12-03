@@ -9,13 +9,13 @@ import java.util.List;
 public interface IndexJobService {
 
     //    热门职位首页展示
-    ResultVo showHotJob();
+    ResultVo showHotJob(int pageNum, int limit);
 
     //    首页展示全职工作
-    ResultVo indexFullJob();
+    ResultVo indexFullJob(int pageNum, int limit);
 
     //    首页展示兼职工作
-    ResultVo indexPartJob();
+    ResultVo indexPartJob(int pageNum, int limit);
 
     //    入驻企业数量
     ResultVo companyNumber();

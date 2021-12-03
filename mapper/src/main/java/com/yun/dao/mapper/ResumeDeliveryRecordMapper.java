@@ -13,7 +13,8 @@ import java.util.List;
 public interface ResumeDeliveryRecordMapper extends FamilyMapper<ResumeDeliveryRecord> {
 
     //    我的界面展示投递岗位
-    List<DeliverJobVo> showDeliverJob(Integer custId);
+    List<DeliverJobVo> showDeliverJob(@Param("custId") Integer custId, @Param("start") int start,
+                                      @Param("limit") int limit);
 
     //    投递职位防止重复
     List<ResumeDeliveryRecord> PreventDuplication(@Param("custId") Integer custId, @Param("jobId") Integer jobId, @Param("resumeId") Integer resumeId);

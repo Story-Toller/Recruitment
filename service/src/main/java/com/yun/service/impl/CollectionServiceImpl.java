@@ -5,6 +5,7 @@ import com.yun.beans.entity.CustomerCollection;
 import com.yun.beans.vo.JobCollectionVo;
 import com.yun.dao.mapper.CustomerCollectionMapper;
 import com.yun.service.business.Collectionservice;
+import com.yun.sysytem.utils.PageHelper;
 import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -47,9 +48,13 @@ public class CollectionServiceImpl implements Collectionservice {
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
-    public ResultVo showCollectionByCusId(Integer custId) {
-        List<JobCollectionVo> jobCollectionVos = customerCollectionMapper.showJobCollection(custId);
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobCollectionVos);
+    public ResultVo showCollectionByCusId(Integer custId, int pageNum, int limit) {
+        int start = (pageNum - 1) * limit;
+        List<JobCollectionVo> jobCollectionVos = customerCollectionMapper.showJobCollection(custId, start, limit);
+        int jobs = jobCollectionVos.size();
+        int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
+        PageHelper<JobCollectionVo> jobCollectionVoPageHelper = new PageHelper<>(jobs, pageCount, jobCollectionVos);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobCollectionVoPageHelper);
         return resultVo;
     }
 }

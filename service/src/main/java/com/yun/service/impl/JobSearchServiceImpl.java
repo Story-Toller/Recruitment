@@ -24,10 +24,11 @@ public class JobSearchServiceImpl implements JobSearchService {
         String kw = "%" + keyword + "%";
         int start = (pageNum - 1) * limit;
         List<JobVo> jobVos = jobMapper.selectByKeyWord(kw, start, limit);
-        Example example = new Example(Job.class);
-        Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("jobName", keyword);
-        int jobs = jobMapper.selectCountByExample(example);
+//        Example example = new Example(Job.class);
+//        Example.Criteria criteria = example.createCriteria();
+//        criteria.andEqualTo("jobName", keyword);
+//        int jobs = jobMapper.selectCountByExample(example);
+        int jobs = jobVos.size();
         int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
         PageHelper<JobVo> jobVoPageHelper = new PageHelper<>(jobs, pageCount, jobVos);
         ResultVo resultVo = new ResultVo(ResStatus.OK, "success", jobVoPageHelper);

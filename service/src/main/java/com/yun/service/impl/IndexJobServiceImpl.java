@@ -6,6 +6,7 @@ import com.yun.dao.mapper.CustomerMapper;
 import com.yun.dao.mapper.JobMapper;
 import com.yun.dao.mapper.ResumeDeliveryRecordMapper;
 import com.yun.service.business.IndexJobService;
+import com.yun.sysytem.utils.PageHelper;
 import com.yun.sysytem.vo.ResStatus;
 import com.yun.sysytem.vo.ResultVo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,23 +27,35 @@ public class IndexJobServiceImpl implements IndexJobService {
     CustomerMapper customerMapper;
 
     @Override
-    public ResultVo showHotJob() {
-        List<JobVo> jobVos = jobMapper.indexShowJob();
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "NewJob", jobVos);
+    public ResultVo showHotJob(int pageNum, int limit) {
+        int start = (pageNum - 1) * limit;
+        List<JobVo> jobVos = jobMapper.indexShowJob(start, limit);
+        int jobs = jobVos.size();
+        int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
+        PageHelper<JobVo> jobVoPageHelper = new PageHelper<>(jobs, pageCount, jobVos);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "NewJob", jobVoPageHelper);
         return resultVo;
     }
 
     @Override
-    public ResultVo indexFullJob() {
-        List<JobVo> jobVos = jobMapper.indexFullJob();
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "FullJOb", jobVos);
+    public ResultVo indexFullJob(int pageNum, int limit) {
+        int start = (pageNum - 1) * limit;
+        List<JobVo> jobVos = jobMapper.indexFullJob(start,limit);
+        int jobs = jobVos.size();
+        int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
+        PageHelper<JobVo> jobVoPageHelper = new PageHelper<>(jobs, pageCount, jobVos);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "FullJOb", jobVoPageHelper);
         return resultVo;
     }
 
     @Override
-    public ResultVo indexPartJob() {
-        List<JobVo> jobVos = jobMapper.indexPartJob();
-        ResultVo resultVo = new ResultVo(ResStatus.OK, "PartJob", jobVos);
+    public ResultVo indexPartJob(int pageNum, int limit) {
+        int start = (pageNum - 1) * limit;
+        List<JobVo> jobVos = jobMapper.indexPartJob(start,limit);
+        int jobs = jobVos.size();
+        int pageCount = jobs % limit == 0 ? jobs / limit : jobs / limit + 1;
+        PageHelper<JobVo> jobVoPageHelper = new PageHelper<>(jobs, pageCount, jobVos);
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "PartJob", jobVoPageHelper);
         return resultVo;
     }
 

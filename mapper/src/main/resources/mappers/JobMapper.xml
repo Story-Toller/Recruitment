@@ -85,7 +85,8 @@
                job_max_salary,
                job_other1
         from job
-        ORDER BY job_publish_time DESC
+        ORDER BY job_publish_time DESC limit #{start}
+               , #{limit}
     </select>
     <select id="indexFullJob" resultMap="JobVoMap">
         select job_id,
@@ -97,7 +98,8 @@
                job_max_salary,
                job_other1
         from job
-        where job_other1 = "全职"
+        where job_other1 = "全职" limit #{start}
+            , #{limit}
     </select>
     <select id="indexPartJob" resultMap="JobVoMap">
         select job_id,
@@ -109,7 +111,8 @@
                job_max_salary,
                job_other1
         from job
-        where job_other1 = "兼职"
+        where job_other1 = "兼职" limit #{start}
+            , #{limit}
     </select>
     <select id="showTechnicalJob" resultMap="JobVoMap">
         select job_id,

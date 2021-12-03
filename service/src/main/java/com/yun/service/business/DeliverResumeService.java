@@ -9,5 +9,5 @@ public interface DeliverResumeService {
     ResultVo deliverResume(Integer custId, Integer jobId, Integer resumeId);
 
     //    展示投递过的岗位
-    ResultVo showDeliverResume(Integer custId);
+    ResultVo showDeliverResume(Integer custId,int pageNum, int limit);
 }
