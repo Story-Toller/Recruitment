@@ -22,4 +22,11 @@ public class CompanyServiceImpl implements CompanyService {
         ResultVo resultVo = new ResultVo(ResStatus.OK, "success", companies);
         return resultVo;
     }
+
+    @Override
+    public ResultVo showAllCompany() {
+        List<Company> companies = companyMapper.selectAll();
+        ResultVo resultVo = new ResultVo(ResStatus.OK, "公司展示", companies);
+        return resultVo;
+    }
 }

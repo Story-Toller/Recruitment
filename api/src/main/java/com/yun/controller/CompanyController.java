@@ -22,4 +22,11 @@ public class CompanyController {
         ResultVo resultVo = companyService.showAllCompanyInfo(companyId);
         return resultVo;
     }
+
+    @GetMapping("/all")
+    @ApiOperation("查询所有公司的接口")
+    public ResultVo showAll(){
+        ResultVo resultVo = companyService.showAllCompany();
+        return resultVo;
+    }
 }
