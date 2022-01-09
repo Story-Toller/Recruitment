@@ -1,18 +1,12 @@
-# 线上招聘网站
-这是一款后端基于springboot框架，
+# 凌云线上招聘网站
+基于springboot和vue的前后端分离项目
 
-前端使用html与thymeleaf模板，
+接口文档使用swagger，前端使用element-ui完善样式
 
-接口文档使用swagger，适配es搜索引擎，
+数据库使用mysql8.0
 
-数据库使用mysql与redis
+项目提供用户对职位的浏览，收藏，职位申请，并且申请职位时会自动发送邮件至hr邮箱，
 
-使用了部分插件降低开发难度（lombok，maven）
+个人简历的增删改查，对个人信息的编辑，以及个人信息及简历的隐私度设置。
 
-注：本系统数据库使用mysql8.0，驱动配置不同，使用jdk11，springboot2.4.5
-
-版本均为最新版。
-
-![未命名文件](C:\Users\说书客\Downloads\未命名文件.png)
-
-![image-20210926113316950](C:\Users\说书客\AppData\Roaming\Typora\typora-user-images\image-20210926113316950.png)
+对于招聘者来说，可以完成对候选人的筛选，以及公司信息的更改，职位发布等功能
